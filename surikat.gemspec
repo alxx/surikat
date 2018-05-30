@@ -7,17 +7,17 @@ Gem::Specification.new do |spec|
   spec.name          = "surikat"
   spec.version       = Surikat::VERSION
   spec.authors       = ["Alex Deva"]
-  spec.email         = ["alxx@indiro.se"]
+  spec.email         = ["me@alxx.se"]
 
   spec.summary       = %q{An API-only, GraphQL centric web framework.}
   spec.description   = %q{Surikat is a web framework that revolves around GraphQL, offering a lot of ready-made functionality such as CRUD operations, automatic query generation, authentication and performance optimisations.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/alxx/surikat"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
+    #spec.metadata["allowed_push_host"] = "http://rubygems.org"
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
@@ -38,7 +38,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "activesupport", "~> 5.2", ">= 5.2.0"
   spec.add_development_dependency "graphql-libgraphqlparser", "~> 1.2", ">= 1.2.0"
   spec.add_development_dependency "oj", "~> 3.3", ">= 3.3.5"
-  spec.add_development_dependency "standalone_migrations", "~> 5.2", ">= 5.2.5"
+#  spec.add_development_dependency "standalone_migrations", "~> 5.2", ">= 5.2.5"
 #  spec.add_development_dependency "ransack", "~> 1.8", ">= 1.8.2"
 
 

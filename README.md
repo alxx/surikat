@@ -148,6 +148,25 @@ Example:
 surikat generate model Book title:string
 ```
 
+#### A Note About Ransack
+
+Surikat comes with Ransack, so that when you retrieve a collection of ActiveRecord objects, you can
+already filter and sort them using [Ransack search matchers](https://github.com/activerecord-hackery/ransack#search-matchers). 
+
+Example query:
+
+```graphql
+ {
+  Authors(q: "is_any_good_eq=false&id_lt=20 ") {
+    id
+    name
+    created_at
+    is_any_good
+    year_of_birth
+  }
+}
+```
+
 ### Custom Data
 
 Sometimes you need to supply for the frontend things that don't come directly from the database.
@@ -362,25 +381,6 @@ passenger serve
 
 to start a server on port 3000. Then you can use GraphiQL, curl or your actual frontend app to start 
 querying the backend.
-
-#### A Note About Ransack
-
-Surikat comes with Ransack, so that when you retrieve a collection of ActiveRecord objects, you can
-already filter and sort them using [Ransack search matchers](https://github.com/activerecord-hackery/ransack#search-matchers). 
-
-Example query:
-
-```graphql
- {
-  Authors(q: "is_any_good_eq=false&id_lt=20 ") {
-    id
-    name
-    created_at
-    is_any_good
-    year_of_birth
-  }
-}
-```
 
 ## System Dependencies
 

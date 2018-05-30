@@ -2,57 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66400b9f-bfb7-48ab-a1ab-331b1d21e8c6" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/surikat.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.rspec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Rakefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/console" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/setup" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exe/surikat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/surikat.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/surikat/base_model.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/surikat/base_queries.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/surikat/base_type.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/surikat/configurations.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/surikat/new_app.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/surikat/routes.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/surikat/scaffold.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/surikat/session.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/surikat/session_manager.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/.rspec.tmpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/.standalone_migrations.tmpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/Gemfile.tmpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/Rakefile.tmpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/aaa_queries.rb.tmpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/aaa_spec.rb.tmpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/application.yml.tmpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/base_aaa_model.rb.tmpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/base_model.rb.tmpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/base_spec.rb.tmpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/config.ru.tmpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/console.tmpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/crud_queries.rb.tmpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/database.yml.tmpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/hello_queries.rb.tmpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/hello_spec.rb.tmpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/routes.yml.tmpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/spec_helper.rb.tmpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/test_helper.rb.tmpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/surikat/types.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/surikat/version.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/surikat/yaml_configurator.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/spec_helper.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/surikat_spec.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/surikat.gemspec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -72,7 +22,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -80,6 +30,15 @@
                 <caret line="363" column="18" selection-start-line="363" selection-start-column="18" selection-end-line="363" selection-end-column="18" />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -197,9 +156,9 @@
         <option value="$PROJECT_DIR$/lib/surikat/templates/database.yml.tmpl" />
         <option value="$PROJECT_DIR$/lib/surikat/templates/config.ru.tmpl" />
         <option value="$PROJECT_DIR$/TODO" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/lib/surikat/version.rb" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -309,12 +268,12 @@
       <workItem from="1526473553950" duration="20600000" />
       <workItem from="1527061061177" duration="45000" />
       <workItem from="1527080050867" duration="68864000" />
-      <workItem from="1527681663233" duration="6990000" />
+      <workItem from="1527681663233" duration="7077000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119946000" />
+    <option name="totallyTimeSpent" value="120033000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -681,13 +640,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TODO">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -723,6 +675,13 @@
             <caret line="363" column="18" selection-start-line="363" selection-start-column="18" selection-end-line="363" selection-end-column="18" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
         </state>
       </provider>
     </entry>

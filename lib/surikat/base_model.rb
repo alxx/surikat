@@ -1,8 +1,6 @@
 require 'active_record'
 require 'ransack'
 
-#require File.join(Gem::Specification.find_by_name("surikat").full_gem_path, "lib/surikat/yaml_configurator")
-
 module Surikat
 
   class BaseModel < ActiveRecord::Base

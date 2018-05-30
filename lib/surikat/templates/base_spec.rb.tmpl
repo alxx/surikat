@@ -69,7 +69,7 @@ describe % {class_name}Queries do
   context "When testing the %{class_name} mutations" do
 
     before(:all) do
-      Author.destroy_all
+      %{class_name}.destroy_all
 
       @expected_fields = [ %{columns_space} ]
     end

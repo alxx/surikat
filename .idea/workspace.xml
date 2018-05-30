@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66400b9f-bfb7-48ab-a1ab-331b1d21e8c6" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/surikat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/surikat.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/console" beforeDir="false" afterPath="$PROJECT_DIR$/bin/console" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exe/surikat" beforeDir="false" afterPath="$PROJECT_DIR$/exe/surikat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/surikat.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/surikat.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/surikat/base_model.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/surikat/base_model.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/surikat/templates/base_spec.rb.tmpl" beforeDir="false" afterPath="$PROJECT_DIR$/lib/surikat/templates/base_spec.rb.tmpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/surikat/templates/console.tmpl" beforeDir="false" afterPath="$PROJECT_DIR$/lib/surikat/templates/console.tmpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/surikat/version.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/surikat/version.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/surikat-0.2.2.gem" beforeDir="false" afterPath="$PROJECT_DIR$/surikat-0.2.2.gem" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/surikat.gemspec" beforeDir="false" afterPath="$PROJECT_DIR$/surikat.gemspec" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -57,453 +60,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="surikat" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/exe/surikat">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="169" column="42" selection-start-line="169" selection-start-column="42" selection-end-line="169" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GemDependency/#surikat" pinned="false" current-in-tab="false">
-        <entry file="uml://GemDependency/#surikat">
-          <provider selected="true" editor-type-id="UmlEditorProvider">
-            <state>
-              <ID>GemDependency</ID>
-              <OriginalElement>#surikat</OriginalElement>
-              <nodes>
-                <node x="118.0" y="504.0">rspec-expectations</node>
-                <node x="4.5" y="415.0">diff-lcs</node>
-                <node x="1372.2491448692153" y="415.0">rake</node>
-                <node x="948.4195674044265" y="237.0">rails-html-sanitizer</node>
-                <node x="459.59230382293765" y="593.0">ransack</node>
-                <node x="798.7089704896043" y="504.0">slop</node>
-                <node x="677.1970657276995" y="79.0">tzinfo</node>
-                <node x="1037.0589704896045" y="158.0">loofah</node>
-                <node x="366.5" y="79.0">i18n</node>
-                <node x="451.3362340710932" y="326.0">arel</node>
-                <node x="906.5589704896045" y="0.0">mini_portile2</node>
-                <node x="168.0" y="415.0">rspec-support</node>
-                <node x="874.7089704896043" y="504.0">coderay</node>
-                <node x="1319.0862340710933" y="593.0">bundler</node>
-                <node x="921.5589704896045" y="79.0">nokogiri</node>
-                <node x="0.0" y="504.0">rspec-mocks</node>
-                <node x="1147.5862340710933" y="237.0">rack</node>
-                <node x="1057.0589704896045" y="79.0">crass</node>
-                <node x="618.4195674044265" y="237.0">builder</node>
-                <node x="1141.0862340710933" y="593.0">standalone_migrations</node>
-                <node x="1464.0862340710933" y="504.0">graphql</node>
-                <node x="477.4195674044265" y="237.0">activemodel</node>
-                <node x="553.5923038229377" y="593.0">sqlite3</node>
-                <node x="425.98873239436625" y="0.0">concurrent-ruby</node>
-                <node x="278.0" y="504.0">rspec-core</node>
-                <node x="794.4195674044265" y="237.0">rails-dom-testing</node>
-                <node x="1024.6695674044265" y="692.0">#surikat</node>
-                <node x="852.5423038229378" y="593.0">pry</node>
-                <node x="1296.2491448692153" y="415.0">thor</node>
-                <node x="406.05357142857144" y="504.0">polyamorous</node>
-                <node x="662.1970657276995" y="0.0">thread_safe</node>
-                <node x="1413.0862340710933" y="593.0">graphql-libgraphqlparser</node>
-                <node x="1105.8362340710933" y="326.0">rack-test</node>
-                <node x="536.565811535882" y="158.0">activesupport</node>
-                <node x="1215.7818075117368" y="504.0">railties</node>
-                <node x="474.4195674044265" y="415.0">activerecord</node>
-                <node x="932.6695674044265" y="415.0">actionpack</node>
-                <node x="712.4195674044265" y="237.0">erubi</node>
-                <node x="577.1970657276995" y="79.0">minitest</node>
-                <node x="683.7651408450702" y="326.0">actionview</node>
-                <node x="1073.1695674044265" y="593.0">oj</node>
-                <node x="1071.9195674044265" y="415.0">method_source</node>
-                <node x="159.82206572769962" y="593.0">rspec</node>
-              </nodes>
-              <notes />
-              <edges>
-                <edge source="actionpack" target="rails-html-sanitizer">
-                  <point x="7.666666666666629" y="-14.5" />
-                  <point x="986.3362340710931" y="375.0" />
-                  <point x="1062.4195674044265" y="375.0" />
-                  <point x="38.0" y="14.5" />
-                </edge>
-                <edge source="standalone_migrations" target="rake">
-                  <point x="52.66666666666663" y="-14.5" />
-                  <point x="1272.7529007377598" y="573.0" />
-                  <point x="1414.2491448692153" y="573.0" />
-                  <point x="14.0" y="14.5" />
-                </edge>
-                <edge source="ransack" target="i18n">
-                  <point x="-29.59999999999991" y="-14.5" />
-                  <point x="466.99230382293774" y="573.0" />
-                  <point x="380.5" y="573.0" />
-                  <point x="-14.0" y="14.5" />
-                </edge>
-                <edge source="rails-dom-testing" target="activesupport">
-                  <point x="-33.5" y="-14.5" />
-                  <point x="827.9195674044265" y="217.0" />
-                  <point x="622.9943829644533" y="217.0" />
-                  <point x="31.42857142857133" y="14.5" />
-                </edge>
-                <edge source="#surikat" target="bundler">
-                  <point x="23.125" y="-14.5" />
-                  <point x="1084.7945674044265" y="662.0" />
-                  <point x="1356.0862340710933" y="662.0" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="rack-test" target="rack">
-                  <point x="0.0" y="-14.5" />
-                  <point x="1148.8362340710933" y="306.0" />
-                  <point x="1161.5862340710933" y="306.0" />
-                  <point x="-14.0" y="14.5" />
-                </edge>
-                <edge source="#surikat" target="standalone_migrations">
-                  <point x="13.875" y="-14.5" />
-                  <point x="1075.5445674044265" y="652.0" />
-                  <point x="1220.0862340710933" y="652.0" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="activerecord" target="arel">
-                  <point x="-34.66666666666674" y="-14.5" />
-                  <point x="491.7529007377598" y="395.0" />
-                  <point x="479.3362340710932" y="395.0" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="actionview" target="rails-dom-testing">
-                  <point x="18.399999999999977" y="-14.5" />
-                  <point x="748.1651408450703" y="296.0" />
-                  <point x="827.9195674044265" y="296.0" />
-                  <point x="-33.5" y="14.5" />
-                </edge>
-                <edge source="activesupport" target="concurrent-ruby">
-                  <point x="-13.75" y="-14.5" />
-                  <point x="577.815811535882" y="133.0" />
-                  <point x="566.6970657276995" y="133.0" />
-                  <point x="566.6970657276995" y="54.0" />
-                  <point x="517.4887323943663" y="54.0" />
-                  <point x="30.5" y="14.5" />
-                </edge>
-                <edge source="loofah" target="nokogiri">
-                  <point x="-17.0" y="-14.5" />
-                  <point x="1054.0589704896045" y="133.0" />
-                  <point x="981.5589704896045" y="133.0" />
-                  <point x="20.0" y="14.5" />
-                </edge>
-                <edge source="rspec-core" target="rspec-support">
-                  <point x="0.0" y="-14.5" />
-                  <point x="324.0" y="484.0" />
-                  <point x="259.66666666666674" y="484.0" />
-                  <point x="36.66666666666674" y="14.5" />
-                </edge>
-                <edge source="actionpack" target="rails-dom-testing">
-                  <point x="-7.666666666666629" y="-14.5" />
-                  <point x="971.0029007377599" y="375.0" />
-                  <point x="894.9195674044265" y="375.0" />
-                  <point x="33.5" y="14.5" />
-                </edge>
-                <edge source="nokogiri" target="mini_portile2">
-                  <point x="0.0" y="-14.5" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="#surikat" target="graphql-libgraphqlparser">
-                  <point x="32.375" y="-14.5" />
-                  <point x="1094.0445674044265" y="672.0" />
-                  <point x="1501.0862340710933" y="672.0" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="ransack" target="activerecord">
-                  <point x="14.799999999999955" y="-14.5" />
-                  <point x="511.3923038229376" y="573.0" />
-                  <point x="514.5535714285714" y="573.0" />
-                  <point x="514.5535714285714" y="484.0" />
-                  <point x="526.4195674044265" y="484.0" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="actionview" target="activesupport">
-                  <point x="-36.799999999999955" y="-14.5" />
-                  <point x="692.9651408450702" y="306.0" />
-                  <point x="607.9195674044265" y="306.0" />
-                  <point x="15.71428571428578" y="14.5" />
-                </edge>
-                <edge source="standalone_migrations" target="railties">
-                  <point x="0.0" y="-14.5" />
-                  <point x="1220.0862340710933" y="573.0" />
-                  <point x="1255.7818075117368" y="573.0" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="pry" target="coderay">
-                  <point x="0.0" y="-14.5" />
-                  <point x="877.5423038229378" y="563.0" />
-                  <point x="911.7089704896043" y="563.0" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="actionpack" target="activesupport">
-                  <point x="-38.33333333333337" y="-14.5" />
-                  <point x="940.3362340710931" y="395.0" />
-                  <point x="596.9195674044265" y="395.0" />
-                  <point x="596.9195674044265" y="217.0" />
-                  <point x="591.565811535882" y="217.0" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="rails-dom-testing" target="nokogiri">
-                  <point x="33.5" y="-14.5" />
-                  <point x="894.9195674044265" y="217.0" />
-                  <point x="941.5589704896045" y="217.0" />
-                  <point x="-20.0" y="14.5" />
-                </edge>
-                <edge source="actionview" target="rails-html-sanitizer">
-                  <point x="36.799999999999955" y="-14.5" />
-                  <point x="766.5651408450701" y="306.0" />
-                  <point x="986.4195674044265" y="306.0" />
-                  <point x="-38.0" y="14.5" />
-                </edge>
-                <edge source="ransack" target="polyamorous">
-                  <point x="0.0" y="-14.5" />
-                  <point x="496.59230382293765" y="553.0" />
-                  <point x="455.05357142857144" y="553.0" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="i18n" target="concurrent-ruby">
-                  <point x="0.0" y="-14.5" />
-                  <point x="394.5" y="54.0" />
-                  <point x="456.48873239436625" y="54.0" />
-                  <point x="-30.5" y="14.5" />
-                </edge>
-                <edge source="actionpack" target="rack-test">
-                  <point x="23.0" y="-14.5" />
-                  <point x="1001.6695674044265" y="385.0" />
-                  <point x="1148.8362340710933" y="385.0" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="railties" target="activesupport">
-                  <point x="0.0" y="-14.5" />
-                  <point x="1255.7818075117368" y="207.0" />
-                  <point x="638.7086686787391" y="207.0" />
-                  <point x="47.14285714285711" y="14.5" />
-                </edge>
-                <edge source="rspec" target="rspec-expectations">
-                  <point x="0.0" y="-14.5" />
-                  <point x="190.82206572769962" y="573.0" />
-                  <point x="188.0" y="573.0" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="activesupport" target="minitest">
-                  <point x="13.75" y="-14.5" />
-                  <point x="605.315811535882" y="133.0" />
-                  <point x="617.1970657276995" y="133.0" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="railties" target="rake">
-                  <point x="32.0" y="-14.5" />
-                  <point x="1287.781807511737" y="484.0" />
-                  <point x="1386.2491448692153" y="484.0" />
-                  <point x="-14.0" y="14.5" />
-                </edge>
-                <edge source="rspec-mocks" target="rspec-support">
-                  <point x="24.5" y="-14.5" />
-                  <point x="73.5" y="484.0" />
-                  <point x="186.33333333333326" y="484.0" />
-                  <point x="-36.66666666666674" y="14.5" />
-                </edge>
-                <edge source="ransack" target="actionpack">
-                  <point x="29.59999999999991" y="-14.5" />
-                  <point x="526.1923038229376" y="573.0" />
-                  <point x="788.2089704896043" y="573.0" />
-                  <point x="788.2089704896043" y="474.0" />
-                  <point x="955.6695674044265" y="474.0" />
-                  <point x="-23.0" y="14.5" />
-                </edge>
-                <edge source="#surikat" target="oj">
-                  <point x="4.625" y="-14.5" />
-                  <point x="1066.2945674044265" y="642.0" />
-                  <point x="1095.1695674044265" y="642.0" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="rspec" target="rspec-core">
-                  <point x="20.666666666666742" y="-14.5" />
-                  <point x="211.48873239436637" y="573.0" />
-                  <point x="324.0" y="573.0" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="actionview" target="builder">
-                  <point x="-18.399999999999977" y="-14.5" />
-                  <point x="711.3651408450703" y="296.0" />
-                  <point x="655.4195674044265" y="296.0" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="rspec" target="rspec-mocks">
-                  <point x="-20.666666666666742" y="-14.5" />
-                  <point x="170.15539906103288" y="573.0" />
-                  <point x="49.0" y="573.0" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="pry" target="slop">
-                  <point x="-16.666666666666686" y="-14.5" />
-                  <point x="860.8756371562711" y="573.0" />
-                  <point x="826.7089704896043" y="573.0" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="rspec-expectations" target="rspec-support">
-                  <point x="35.0" y="-14.5" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="standalone_migrations" target="activerecord">
-                  <point x="-52.66666666666663" y="-14.5" />
-                  <point x="1167.4195674044265" y="573.0" />
-                  <point x="974.4589704896044" y="573.0" />
-                  <point x="974.4589704896044" y="464.0" />
-                  <point x="561.0862340710933" y="464.0" />
-                  <point x="34.66666666666674" y="14.5" />
-                </edge>
-                <edge source="railties" target="thor">
-                  <point x="16.0" y="-14.5" />
-                  <point x="1271.7818075117368" y="474.0" />
-                  <point x="1324.2491448692153" y="474.0" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="pry" target="method_source">
-                  <point x="16.666666666666657" y="-14.5" />
-                  <point x="894.2089704896044" y="573.0" />
-                  <point x="959.2089704896043" y="573.0" />
-                  <point x="959.2089704896043" y="484.0" />
-                  <point x="1099.4195674044265" y="484.0" />
-                  <point x="-27.5" y="14.5" />
-                </edge>
-                <edge source="actionpack" target="actionview">
-                  <point x="-23.0" y="-14.5" />
-                  <point x="955.6695674044265" y="385.0" />
-                  <point x="729.7651408450702" y="385.0" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="activesupport" target="tzinfo">
-                  <point x="41.25" y="-14.5" />
-                  <point x="632.815811535882" y="133.0" />
-                  <point x="711.1970657276995" y="133.0" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="activesupport" target="i18n">
-                  <point x="-41.25" y="-14.5" />
-                  <point x="550.315811535882" y="133.0" />
-                  <point x="408.5" y="133.0" />
-                  <point x="14.0" y="14.5" />
-                </edge>
-                <edge source="actionview" target="erubi">
-                  <point x="0.0" y="-14.5" />
-                  <point x="729.7651408450702" y="286.0" />
-                  <point x="743.4195674044265" y="286.0" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="rspec-mocks" target="diff-lcs">
-                  <point x="-24.5" y="-14.5" />
-                  <point x="-20.0" y="14.5" />
-                </edge>
-                <edge source="#surikat" target="sqlite3">
-                  <point x="-13.875" y="-14.5" />
-                  <point x="1047.7945674044265" y="652.0" />
-                  <point x="590.5923038229377" y="652.0" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="rails-html-sanitizer" target="loofah">
-                  <point x="0.0" y="-14.5" />
-                  <point x="1024.4195674044265" y="217.0" />
-                  <point x="1071.0589704896045" y="217.0" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="actionpack" target="rack">
-                  <point x="38.33333333333337" y="-14.5" />
-                  <point x="1017.0029007377599" y="395.0" />
-                  <point x="1202.3362340710933" y="395.0" />
-                  <point x="1202.3362340710933" y="306.0" />
-                  <point x="1189.5862340710933" y="306.0" />
-                  <point x="14.0" y="14.5" />
-                </edge>
-                <edge source="#surikat" target="pry">
-                  <point x="-4.625" y="-14.5" />
-                  <point x="1057.0445674044265" y="642.0" />
-                  <point x="877.5423038229378" y="642.0" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="loofah" target="crass">
-                  <point x="17.0" y="-14.5" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="#surikat" target="rspec">
-                  <point x="-32.375" y="-14.5" />
-                  <point x="1029.2945674044265" y="672.0" />
-                  <point x="190.82206572769962" y="672.0" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="ransack" target="activesupport">
-                  <point x="-14.799999999999955" y="-14.5" />
-                  <point x="481.7923038229377" y="563.0" />
-                  <point x="395.55357142857144" y="563.0" />
-                  <point x="395.55357142857144" y="207.0" />
-                  <point x="544.4229543930248" y="207.0" />
-                  <point x="-47.14285714285711" y="14.5" />
-                </edge>
-                <edge source="graphql-libgraphqlparser" target="graphql">
-                  <point x="0.0" y="-14.5" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="activemodel" target="activesupport">
-                  <point x="0.0" y="-14.5" />
-                  <point x="526.4195674044265" y="217.0" />
-                  <point x="560.1372401073104" y="217.0" />
-                  <point x="-31.428571428571445" y="14.5" />
-                </edge>
-                <edge source="railties" target="method_source">
-                  <point x="-16.0" y="-14.5" />
-                  <point x="1239.7818075117368" y="464.0" />
-                  <point x="1154.4195674044265" y="464.0" />
-                  <point x="27.5" y="14.5" />
-                </edge>
-                <edge source="activerecord" target="activemodel">
-                  <point x="0.0" y="-14.5" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="polyamorous" target="activerecord">
-                  <point x="0.0" y="-14.5" />
-                  <point x="455.05357142857144" y="484.0" />
-                  <point x="491.7529007377598" y="484.0" />
-                  <point x="-34.66666666666674" y="14.5" />
-                </edge>
-                <edge source="rspec-expectations" target="diff-lcs">
-                  <point x="-35.0" y="-14.5" />
-                  <point x="153.0" y="474.0" />
-                  <point x="64.5" y="474.0" />
-                  <point x="20.0" y="14.5" />
-                </edge>
-                <edge source="tzinfo" target="thread_safe">
-                  <point x="0.0" y="-14.5" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="activerecord" target="activesupport">
-                  <point x="34.66666666666674" y="-14.5" />
-                  <point x="561.0862340710933" y="395.0" />
-                  <point x="585.9195674044265" y="395.0" />
-                  <point x="585.9195674044265" y="217.0" />
-                  <point x="575.8515258215962" y="217.0" />
-                  <point x="-15.71428571428578" y="14.5" />
-                </edge>
-                <edge source="railties" target="actionpack">
-                  <point x="-32.0" y="-14.5" />
-                  <point x="1223.7818075117368" y="474.0" />
-                  <point x="1001.6695674044265" y="474.0" />
-                  <point x="23.0" y="14.5" />
-                </edge>
-                <edge source="#surikat" target="ransack">
-                  <point x="-23.125" y="-14.5" />
-                  <point x="1038.5445674044265" y="662.0" />
-                  <point x="496.59230382293765" y="662.0" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-              </edges>
-              <settings layout="Hierarchic Group" zoom="0.8590062111801242" x="269.3926247288503" y="123.01626898047715" />
-              <SelectedNodes />
-              <Categories />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="version.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="version.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/surikat/version.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
@@ -515,8 +72,8 @@
       <file leaf-file-name="surikat.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/surikat.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4642">
-              <caret line="282" selection-start-line="282" selection-end-line="282" />
+            <state relative-caret-position="51">
+              <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -537,11 +94,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>surikat_sess</find>
-      <find>@@opt</find>
-      <find>base_que</find>
-      <find>BaseType</find>
-      <find>session_manag</find>
       <find>database.</find>
       <find>yaml_config</find>
       <find>.config</find>
@@ -567,6 +119,11 @@
       <find>ARGUMENTS:</find>
       <find>Redis.n</find>
       <find>TODO</find>
+      <find>require 'ac</find>
+      <find>active_reco</find>
+      <find>puts 71</find>
+      <find>puts 'eee</find>
+      <find>Author</find>
     </findStrings>
     <replaceStrings>
       <replace>@@routes</replace>
@@ -596,7 +153,6 @@
         <option value="$PROJECT_DIR$/lib/surikat/templates/.rspec.tmpl" />
         <option value="$PROJECT_DIR$/lib/surikat/templates/spec_helper.rb.tmpl" />
         <option value="$PROJECT_DIR$/lib/surikat/templates/Gemfile.tmpl" />
-        <option value="$PROJECT_DIR$/bin/console" />
         <option value="$PROJECT_DIR$/lib/surikat/templates/base_aaa_model.rb" />
         <option value="$PROJECT_DIR$/lib/surikat/templates/aaa.yml.tmpl" />
         <option value="$PROJECT_DIR$/lib/surikat/templates/aaa.rb.tmpl" />
@@ -611,7 +167,6 @@
         <option value="$PROJECT_DIR$/lib/surikat/templates/aaa_spec.rb.tmpl" />
         <option value="$PROJECT_DIR$/lib/surikat/templates/base_aaa_model.rb.tmpl" />
         <option value="$PROJECT_DIR$/lib/surikat/templates/base_model.rb.tmpl" />
-        <option value="$PROJECT_DIR$/lib/surikat/templates/console.tmpl" />
         <option value="$PROJECT_DIR$/lib/surikat/templates/hello_queries.rb.tmpl" />
         <option value="$PROJECT_DIR$/lib/surikat/templates/hello_spec.rb.tmpl" />
         <option value="$PROJECT_DIR$/lib/surikat/templates/routes.yml.tmpl" />
@@ -621,18 +176,20 @@
         <option value="$PROJECT_DIR$/lib/surikat/scaffold.rb" />
         <option value="$PROJECT_DIR$/lib/surikat/new_app.rb" />
         <option value="$PROJECT_DIR$/lib/surikat/templates/test_helper.rb.tmpl" />
-        <option value="$PROJECT_DIR$/lib/surikat/templates/base_spec.rb.tmpl" />
         <option value="$PROJECT_DIR$/lib/surikat/templates/crud_queries.rb.tmpl" />
-        <option value="$PROJECT_DIR$/lib/surikat.rb" />
         <option value="$PROJECT_DIR$/lib/surikat/templates/database.yml.tmpl" />
         <option value="$PROJECT_DIR$/lib/surikat/templates/config.ru.tmpl" />
         <option value="$PROJECT_DIR$/TODO" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/lib/surikat/version.rb" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/lib/surikat/base_model.rb" />
         <option value="$PROJECT_DIR$/surikat.gemspec" />
+        <option value="$PROJECT_DIR$/bin/console" />
+        <option value="$PROJECT_DIR$/lib/surikat/templates/console.tmpl" />
         <option value="$PROJECT_DIR$/exe/surikat" />
+        <option value="$PROJECT_DIR$/lib/surikat.rb" />
+        <option value="$PROJECT_DIR$/lib/surikat/base_model.rb" />
+        <option value="$PROJECT_DIR$/lib/surikat/templates/base_spec.rb.tmpl" />
+        <option value="$PROJECT_DIR$/lib/surikat/version.rb" />
       </list>
     </option>
   </component>
@@ -686,6 +243,18 @@
               <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="surikat" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="surikat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="surikat" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="surikat" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="surikat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="surikat" type="462c0819:PsiDirectoryNode" />
+              <item name="spec" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -699,7 +268,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -735,7 +304,7 @@
       <workItem from="1526473553950" duration="20600000" />
       <workItem from="1527061061177" duration="45000" />
       <workItem from="1527080050867" duration="68864000" />
-      <workItem from="1527681663233" duration="10003000" />
+      <workItem from="1527681663233" duration="13661000" />
     </task>
     <task id="LOCAL-00001" summary="no gem">
       <created>1527697580402</created>
@@ -786,11 +355,18 @@
       <option name="project" value="LOCAL" />
       <updated>1527703598727</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fixed issues with fresh project">
+      <created>1527705324011</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1527705324011</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122959000" />
+    <option name="totallyTimeSpent" value="126617000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -839,7 +415,8 @@
     <MESSAGE value="added .gem file" />
     <MESSAGE value="fixed .gemspec" />
     <MESSAGE value="runtime deps" />
-    <option name="LAST_COMMIT_MESSAGE" value="runtime deps" />
+    <MESSAGE value="fixed issues with fresh project" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed issues with fresh project" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -870,13 +447,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/surikat/main.rb" />
-    <entry file="file://$PROJECT_DIR$/bin/console">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/surikat/templates/aaa.yml.tmpl" />
     <entry file="file://$PROJECT_DIR$/lib/surikat/templates/aaa.rb.tmpl" />
     <entry file="file://$PROJECT_DIR$/lib/surikat_session.rb" />
@@ -934,13 +504,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2550">
           <caret line="150" column="3" selection-start-line="150" selection-start-column="3" selection-end-line="150" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/surikat/templates/console.tmpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="19" lean-forward="true" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -1051,13 +614,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/surikat/templates/base_spec.rb.tmpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="45" column="41" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/surikat/templates/crud_queries.rb.tmpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="945">
@@ -1100,13 +656,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/surikat/version.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -1117,377 +666,422 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/base_queries.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="uml://GemDependency/#surikat">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
           <ID>GemDependency</ID>
           <OriginalElement>#surikat</OriginalElement>
           <nodes>
-            <node x="118.0" y="504.0">rspec-expectations</node>
-            <node x="4.5" y="415.0">diff-lcs</node>
-            <node x="1372.2491448692153" y="415.0">rake</node>
-            <node x="948.4195674044265" y="237.0">rails-html-sanitizer</node>
-            <node x="459.59230382293765" y="593.0">ransack</node>
-            <node x="798.7089704896043" y="504.0">slop</node>
-            <node x="677.1970657276995" y="79.0">tzinfo</node>
-            <node x="1037.0589704896045" y="158.0">loofah</node>
-            <node x="366.5" y="79.0">i18n</node>
-            <node x="451.3362340710932" y="326.0">arel</node>
-            <node x="906.5589704896045" y="0.0">mini_portile2</node>
-            <node x="168.0" y="415.0">rspec-support</node>
-            <node x="874.7089704896043" y="504.0">coderay</node>
-            <node x="1319.0862340710933" y="593.0">bundler</node>
-            <node x="921.5589704896045" y="79.0">nokogiri</node>
-            <node x="0.0" y="504.0">rspec-mocks</node>
-            <node x="1147.5862340710933" y="237.0">rack</node>
-            <node x="1057.0589704896045" y="79.0">crass</node>
-            <node x="618.4195674044265" y="237.0">builder</node>
-            <node x="1141.0862340710933" y="593.0">standalone_migrations</node>
-            <node x="1464.0862340710933" y="504.0">graphql</node>
-            <node x="477.4195674044265" y="237.0">activemodel</node>
-            <node x="553.5923038229377" y="593.0">sqlite3</node>
-            <node x="425.98873239436625" y="0.0">concurrent-ruby</node>
-            <node x="278.0" y="504.0">rspec-core</node>
-            <node x="794.4195674044265" y="237.0">rails-dom-testing</node>
-            <node x="1024.6695674044265" y="692.0">#surikat</node>
-            <node x="852.5423038229378" y="593.0">pry</node>
-            <node x="1296.2491448692153" y="415.0">thor</node>
-            <node x="406.05357142857144" y="504.0">polyamorous</node>
-            <node x="662.1970657276995" y="0.0">thread_safe</node>
-            <node x="1413.0862340710933" y="593.0">graphql-libgraphqlparser</node>
-            <node x="1105.8362340710933" y="326.0">rack-test</node>
-            <node x="536.565811535882" y="158.0">activesupport</node>
-            <node x="1215.7818075117368" y="504.0">railties</node>
-            <node x="474.4195674044265" y="415.0">activerecord</node>
-            <node x="932.6695674044265" y="415.0">actionpack</node>
-            <node x="712.4195674044265" y="237.0">erubi</node>
-            <node x="577.1970657276995" y="79.0">minitest</node>
-            <node x="683.7651408450702" y="326.0">actionview</node>
-            <node x="1073.1695674044265" y="593.0">oj</node>
-            <node x="1071.9195674044265" y="415.0">method_source</node>
-            <node x="159.82206572769962" y="593.0">rspec</node>
+            <node x="1325.9408529234474" y="544.0">rspec-expectations</node>
+            <node x="1246.8464888487038" y="455.0">diff-lcs</node>
+            <node x="182.0" y="455.0">rake</node>
+            <node x="474.81460216998175" y="277.0">rails-html-sanitizer</node>
+            <node x="1055.0268836648577" y="633.0">ransack</node>
+            <node x="736.9637884267624" y="544.0">slop</node>
+            <node x="845.3387884267624" y="79.0">tzinfo</node>
+            <node x="434.83878842676233" y="158.0">loofah</node>
+            <node x="1155.4408529234474" y="79.0">i18n</node>
+            <node x="1002.9922995780587" y="366.0">arel</node>
+            <node x="700.3387884267624" y="0.0">mini_portile2</node>
+            <node x="1398.2631555153703" y="455.0">rspec-support</node>
+            <node x="602.4637884267624" y="544.0">coderay</node>
+            <node x="1207.9408529234474" y="544.0">rspec-mocks</node>
+            <node x="715.3387884267624" y="79.0">nokogiri</node>
+            <node x="0.0" y="633.0">bundler</node>
+            <node x="95.75" y="277.0">rack</node>
+            <node x="113.5" y="544.0">passenger</node>
+            <node x="420.83878842676233" y="79.0">crass</node>
+            <node x="729.8146021699818" y="277.0">builder</node>
+            <node x="282.81460216998187" y="633.0">standalone_migrations</node>
+            <node x="1605.607519590114" y="544.0">graphql</node>
+            <node x="1257.2312688366485" y="633.0">sqlite3</node>
+            <node x="1020.4922995780587" y="277.0">activemodel</node>
+            <node x="1042.5471217600957" y="0.0">concurrent-ruby</node>
+            <node x="1485.9408529234474" y="544.0">rspec-core</node>
+            <node x="823.8146021699818" y="277.0">rails-dom-testing</node>
+            <node x="479.31460216998187" y="742.0">#surikat</node>
+            <node x="692.6304550934292" y="633.0">pry</node>
+            <node x="258.0" y="455.0">thor</node>
+            <node x="1077.9408529234474" y="544.0">polyamorous</node>
+            <node x="830.3387884267624" y="0.0">thread_safe</node>
+            <node x="1554.607519590114" y="633.0">graphql-libgraphqlparser</node>
+            <node x="374.8979355033151" y="366.0">rack-test</node>
+            <node x="949.7741862567807" y="158.0">activesupport</node>
+            <node x="273.25000000000006" y="544.0">railties</node>
+            <node x="647.8146021699818" y="277.0">erubi</node>
+            <node x="933.3387884267624" y="79.0">minitest</node>
+            <node x="552.2214888487038" y="455.0">actionpack</node>
+            <node x="980.9089662447254" y="455.0">activerecord</node>
+            <node x="632.8146021699819" y="366.0">actionview</node>
+            <node x="460.81460216998187" y="633.0">oj</node>
+            <node x="422.2214888487038" y="455.0">method_source</node>
+            <node x="44.5" y="366.0">rack-app</node>
+            <node x="1373.2137884267624" y="633.0">rspec</node>
           </nodes>
           <notes />
           <edges>
             <edge source="actionpack" target="rails-html-sanitizer">
-              <point x="7.666666666666629" y="-14.5" />
-              <point x="986.3362340710931" y="375.0" />
-              <point x="1062.4195674044265" y="375.0" />
-              <point x="38.0" y="14.5" />
+              <point x="-7.6666666666667425" y="-14.5" />
+              <point x="590.554822182037" y="415.0" />
+              <point x="512.8146021699818" y="415.0" />
+              <point x="-38.0" y="14.5" />
             </edge>
             <edge source="standalone_migrations" target="rake">
-              <point x="52.66666666666663" y="-14.5" />
-              <point x="1272.7529007377598" y="573.0" />
-              <point x="1414.2491448692153" y="573.0" />
-              <point x="14.0" y="14.5" />
+              <point x="-52.66666666666674" y="-14.5" />
+              <point x="309.1479355033151" y="613.0" />
+              <point x="210.0" y="613.0" />
+              <point x="0.0" y="14.5" />
             </edge>
             <edge source="ransack" target="i18n">
-              <point x="-29.59999999999991" y="-14.5" />
-              <point x="466.99230382293774" y="573.0" />
-              <point x="380.5" y="573.0" />
-              <point x="-14.0" y="14.5" />
+              <point x="29.600000000000023" y="-14.5" />
+              <point x="1121.6268836648576" y="613.0" />
+              <point x="1197.4408529234474" y="613.0" />
+              <point x="14.0" y="14.5" />
             </edge>
             <edge source="rails-dom-testing" target="activesupport">
-              <point x="-33.5" y="-14.5" />
-              <point x="827.9195674044265" y="217.0" />
-              <point x="622.9943829644533" y="217.0" />
-              <point x="31.42857142857133" y="14.5" />
+              <point x="33.5" y="-14.5" />
+              <point x="924.3146021699818" y="237.0" />
+              <point x="989.059900542495" y="237.0" />
+              <point x="-15.714285714285666" y="14.5" />
             </edge>
             <edge source="#surikat" target="bundler">
-              <point x="23.125" y="-14.5" />
-              <point x="1084.7945674044265" y="662.0" />
-              <point x="1356.0862340710933" y="662.0" />
+              <point x="-33.299999999999955" y="-14.5" />
+              <point x="483.0146021699819" y="722.0" />
+              <point x="37.0" y="722.0" />
               <point x="0.0" y="14.5" />
             </edge>
             <edge source="rack-test" target="rack">
               <point x="0.0" y="-14.5" />
-              <point x="1148.8362340710933" y="306.0" />
-              <point x="1161.5862340710933" y="306.0" />
-              <point x="-14.0" y="14.5" />
+              <point x="417.8979355033151" y="336.0" />
+              <point x="130.75" y="336.0" />
+              <point x="7.0" y="14.5" />
             </edge>
-            <edge source="#surikat" target="standalone_migrations">
-              <point x="13.875" y="-14.5" />
-              <point x="1075.5445674044265" y="652.0" />
-              <point x="1220.0862340710933" y="652.0" />
-              <point x="0.0" y="14.5" />
+            <edge source="passenger" target="rack">
+              <point x="-21.5" y="-14.5" />
+              <point x="135.0" y="346.0" />
+              <point x="116.75" y="346.0" />
+              <point x="-7.0" y="14.5" />
             </edge>
             <edge source="activerecord" target="arel">
-              <point x="-34.66666666666674" y="-14.5" />
-              <point x="491.7529007377598" y="395.0" />
-              <point x="479.3362340710932" y="395.0" />
+              <point x="0.0" y="-14.5" />
+              <point x="1032.9089662447254" y="435.0" />
+              <point x="1030.9922995780587" y="435.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="#surikat" target="standalone_migrations">
+              <point x="-11.099999999999909" y="-14.5" />
+              <point x="505.21460216998196" y="692.0" />
+              <point x="361.81460216998187" y="692.0" />
               <point x="0.0" y="14.5" />
             </edge>
             <edge source="actionview" target="rails-dom-testing">
-              <point x="18.399999999999977" y="-14.5" />
-              <point x="748.1651408450703" y="296.0" />
-              <point x="827.9195674044265" y="296.0" />
+              <point x="36.79999999999984" y="-14.5" />
+              <point x="715.6146021699817" y="346.0" />
+              <point x="857.3146021699818" y="346.0" />
               <point x="-33.5" y="14.5" />
             </edge>
             <edge source="activesupport" target="concurrent-ruby">
-              <point x="-13.75" y="-14.5" />
-              <point x="577.815811535882" y="133.0" />
-              <point x="566.6970657276995" y="133.0" />
-              <point x="566.6970657276995" y="54.0" />
-              <point x="517.4887323943663" y="54.0" />
-              <point x="30.5" y="14.5" />
+              <point x="13.75" y="-14.5" />
+              <point x="1018.5241862567807" y="133.0" />
+              <point x="1023.8387884267624" y="133.0" />
+              <point x="1023.8387884267624" y="54.0" />
+              <point x="1073.0471217600957" y="54.0" />
+              <point x="-30.5" y="14.5" />
             </edge>
             <edge source="loofah" target="nokogiri">
-              <point x="-17.0" y="-14.5" />
-              <point x="1054.0589704896045" y="133.0" />
-              <point x="981.5589704896045" y="133.0" />
-              <point x="20.0" y="14.5" />
+              <point x="17.0" y="-14.5" />
+              <point x="485.83878842676233" y="133.0" />
+              <point x="735.3387884267624" y="133.0" />
+              <point x="-20.0" y="14.5" />
+            </edge>
+            <edge source="actionpack" target="rails-dom-testing">
+              <point x="23.0" y="-14.5" />
+              <point x="621.2214888487038" y="425.0" />
+              <point x="924.3146021699818" y="425.0" />
+              <point x="33.5" y="14.5" />
             </edge>
             <edge source="rspec-core" target="rspec-support">
               <point x="0.0" y="-14.5" />
-              <point x="324.0" y="484.0" />
-              <point x="259.66666666666674" y="484.0" />
-              <point x="36.66666666666674" y="14.5" />
+              <point x="1531.9408529234474" y="524.0" />
+              <point x="1489.929822182037" y="524.0" />
+              <point x="36.66666666666666" y="14.5" />
             </edge>
-            <edge source="actionpack" target="rails-dom-testing">
-              <point x="-7.666666666666629" y="-14.5" />
-              <point x="971.0029007377599" y="375.0" />
-              <point x="894.9195674044265" y="375.0" />
-              <point x="33.5" y="14.5" />
+            <edge source="#surikat" target="graphql-libgraphqlparser">
+              <point x="33.299999999999955" y="-14.5" />
+              <point x="549.6146021699818" y="722.0" />
+              <point x="1642.607519590114" y="722.0" />
+              <point x="0.0" y="14.5" />
             </edge>
             <edge source="nokogiri" target="mini_portile2">
               <point x="0.0" y="-14.5" />
               <point x="0.0" y="14.5" />
             </edge>
-            <edge source="#surikat" target="graphql-libgraphqlparser">
-              <point x="32.375" y="-14.5" />
-              <point x="1094.0445674044265" y="672.0" />
-              <point x="1501.0862340710933" y="672.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
             <edge source="ransack" target="activerecord">
-              <point x="14.799999999999955" y="-14.5" />
-              <point x="511.3923038229376" y="573.0" />
-              <point x="514.5535714285714" y="573.0" />
-              <point x="514.5535714285714" y="484.0" />
-              <point x="526.4195674044265" y="484.0" />
+              <point x="-14.800000000000011" y="-14.5" />
+              <point x="1077.2268836648577" y="613.0" />
+              <point x="1067.4408529234474" y="613.0" />
+              <point x="1067.4408529234474" y="524.0" />
+              <point x="1032.9089662447254" y="524.0" />
               <point x="0.0" y="14.5" />
             </edge>
             <edge source="actionview" target="activesupport">
-              <point x="-36.799999999999955" y="-14.5" />
-              <point x="692.9651408450702" y="306.0" />
-              <point x="607.9195674044265" y="306.0" />
-              <point x="15.71428571428578" y="14.5" />
+              <point x="-18.40000000000009" y="-14.5" />
+              <point x="660.4146021699818" y="336.0" />
+              <point x="637.3146021699818" y="336.0" />
+              <point x="637.3146021699818" y="227.0" />
+              <point x="973.3456148282092" y="227.0" />
+              <point x="-31.428571428571445" y="14.5" />
             </edge>
             <edge source="standalone_migrations" target="railties">
               <point x="0.0" y="-14.5" />
-              <point x="1220.0862340710933" y="573.0" />
-              <point x="1255.7818075117368" y="573.0" />
+              <point x="361.81460216998187" y="603.0" />
+              <point x="313.25000000000006" y="603.0" />
               <point x="0.0" y="14.5" />
             </edge>
             <edge source="pry" target="coderay">
-              <point x="0.0" y="-14.5" />
-              <point x="877.5423038229378" y="563.0" />
-              <point x="911.7089704896043" y="563.0" />
+              <point x="-16.666666666666742" y="-14.5" />
+              <point x="700.9637884267624" y="613.0" />
+              <point x="639.4637884267624" y="613.0" />
               <point x="0.0" y="14.5" />
             </edge>
+            <edge source="passenger" target="rake">
+              <point x="21.5" y="-14.5" />
+              <point x="178.0" y="524.0" />
+              <point x="191.33333333333326" y="524.0" />
+              <point x="-18.666666666666742" y="14.5" />
+            </edge>
             <edge source="actionpack" target="activesupport">
-              <point x="-38.33333333333337" y="-14.5" />
-              <point x="940.3362340710931" y="395.0" />
-              <point x="596.9195674044265" y="395.0" />
-              <point x="596.9195674044265" y="217.0" />
-              <point x="591.565811535882" y="217.0" />
+              <point x="38.33333333333326" y="-14.5" />
+              <point x="636.554822182037" y="435.0" />
+              <point x="980.0110307414103" y="435.0" />
+              <point x="980.0110307414103" y="247.0" />
+              <point x="1004.7741862567807" y="247.0" />
               <point x="0.0" y="14.5" />
             </edge>
             <edge source="rails-dom-testing" target="nokogiri">
-              <point x="33.5" y="-14.5" />
-              <point x="894.9195674044265" y="217.0" />
-              <point x="941.5589704896045" y="217.0" />
-              <point x="-20.0" y="14.5" />
+              <point x="-33.5" y="-14.5" />
+              <point x="857.3146021699818" y="207.0" />
+              <point x="775.3387884267624" y="207.0" />
+              <point x="20.0" y="14.5" />
             </edge>
             <edge source="actionview" target="rails-html-sanitizer">
-              <point x="36.799999999999955" y="-14.5" />
-              <point x="766.5651408450701" y="306.0" />
-              <point x="986.4195674044265" y="306.0" />
-              <point x="-38.0" y="14.5" />
+              <point x="-36.80000000000007" y="-14.5" />
+              <point x="642.0146021699818" y="346.0" />
+              <point x="588.8146021699818" y="346.0" />
+              <point x="38.0" y="14.5" />
             </edge>
             <edge source="ransack" target="polyamorous">
               <point x="0.0" y="-14.5" />
-              <point x="496.59230382293765" y="553.0" />
-              <point x="455.05357142857144" y="553.0" />
+              <point x="1092.0268836648577" y="593.0" />
+              <point x="1126.9408529234474" y="593.0" />
               <point x="0.0" y="14.5" />
             </edge>
             <edge source="i18n" target="concurrent-ruby">
               <point x="0.0" y="-14.5" />
-              <point x="394.5" y="54.0" />
-              <point x="456.48873239436625" y="54.0" />
-              <point x="-30.5" y="14.5" />
+              <point x="1183.4408529234474" y="54.0" />
+              <point x="1134.0471217600957" y="54.0" />
+              <point x="30.5" y="14.5" />
             </edge>
             <edge source="actionpack" target="rack-test">
-              <point x="23.0" y="-14.5" />
-              <point x="1001.6695674044265" y="385.0" />
-              <point x="1148.8362340710933" y="385.0" />
+              <point x="-38.33333333333326" y="-14.5" />
+              <point x="559.8881555153705" y="435.0" />
+              <point x="417.8979355033151" y="435.0" />
               <point x="0.0" y="14.5" />
             </edge>
             <edge source="railties" target="activesupport">
               <point x="0.0" y="-14.5" />
-              <point x="1255.7818075117368" y="207.0" />
-              <point x="638.7086686787391" y="207.0" />
-              <point x="47.14285714285711" y="14.5" />
+              <point x="313.25000000000006" y="504.0" />
+              <point x="324.50000000000006" y="504.0" />
+              <point x="324.50000000000006" y="217.0" />
+              <point x="957.6313291139236" y="217.0" />
+              <point x="-47.14285714285711" y="14.5" />
             </edge>
             <edge source="rspec" target="rspec-expectations">
               <point x="0.0" y="-14.5" />
-              <point x="190.82206572769962" y="573.0" />
-              <point x="188.0" y="573.0" />
+              <point x="1404.2137884267624" y="613.0" />
+              <point x="1395.9408529234474" y="613.0" />
               <point x="0.0" y="14.5" />
             </edge>
             <edge source="activesupport" target="minitest">
-              <point x="13.75" y="-14.5" />
-              <point x="605.315811535882" y="133.0" />
-              <point x="617.1970657276995" y="133.0" />
+              <point x="-13.75" y="-14.5" />
+              <point x="991.0241862567807" y="133.0" />
+              <point x="973.3387884267624" y="133.0" />
               <point x="0.0" y="14.5" />
             </edge>
             <edge source="railties" target="rake">
-              <point x="32.0" y="-14.5" />
-              <point x="1287.781807511737" y="484.0" />
-              <point x="1386.2491448692153" y="484.0" />
-              <point x="-14.0" y="14.5" />
+              <point x="-32.0" y="-14.5" />
+              <point x="281.25000000000006" y="524.0" />
+              <point x="228.66666666666674" y="524.0" />
+              <point x="18.666666666666742" y="14.5" />
             </edge>
             <edge source="rspec-mocks" target="rspec-support">
               <point x="24.5" y="-14.5" />
-              <point x="73.5" y="484.0" />
-              <point x="186.33333333333326" y="484.0" />
-              <point x="-36.66666666666674" y="14.5" />
+              <point x="1281.4408529234474" y="524.0" />
+              <point x="1416.5964888487038" y="524.0" />
+              <point x="-36.66666666666666" y="14.5" />
             </edge>
             <edge source="ransack" target="actionpack">
-              <point x="29.59999999999991" y="-14.5" />
-              <point x="526.1923038229376" y="573.0" />
-              <point x="788.2089704896043" y="573.0" />
-              <point x="788.2089704896043" y="474.0" />
-              <point x="955.6695674044265" y="474.0" />
-              <point x="-23.0" y="14.5" />
+              <point x="-29.600000000000023" y="-14.5" />
+              <point x="1062.4268836648575" y="613.0" />
+              <point x="803.4637884267624" y="613.0" />
+              <point x="803.4637884267624" y="504.0" />
+              <point x="621.2214888487038" y="504.0" />
+              <point x="23.0" y="14.5" />
+            </edge>
+            <edge source="rack-app" target="rack">
+              <point x="0.0" y="-14.5" />
+              <point x="84.5" y="346.0" />
+              <point x="102.75" y="346.0" />
+              <point x="-21.0" y="14.5" />
             </edge>
             <edge source="#surikat" target="oj">
-              <point x="4.625" y="-14.5" />
-              <point x="1066.2945674044265" y="642.0" />
-              <point x="1095.1695674044265" y="642.0" />
+              <point x="-3.7000000000000455" y="-14.5" />
+              <point x="512.6146021699818" y="682.0" />
+              <point x="482.81460216998187" y="682.0" />
               <point x="0.0" y="14.5" />
             </edge>
             <edge source="rspec" target="rspec-core">
-              <point x="20.666666666666742" y="-14.5" />
-              <point x="211.48873239436637" y="573.0" />
-              <point x="324.0" y="573.0" />
+              <point x="20.666666666666657" y="-14.5" />
+              <point x="1424.8804550934292" y="613.0" />
+              <point x="1531.9408529234474" y="613.0" />
               <point x="0.0" y="14.5" />
             </edge>
             <edge source="actionview" target="builder">
-              <point x="-18.399999999999977" y="-14.5" />
-              <point x="711.3651408450703" y="296.0" />
-              <point x="655.4195674044265" y="296.0" />
+              <point x="18.399999999999977" y="-14.5" />
+              <point x="697.2146021699818" y="336.0" />
+              <point x="766.8146021699818" y="336.0" />
               <point x="0.0" y="14.5" />
             </edge>
             <edge source="rspec" target="rspec-mocks">
-              <point x="-20.666666666666742" y="-14.5" />
-              <point x="170.15539906103288" y="573.0" />
-              <point x="49.0" y="573.0" />
+              <point x="-20.666666666666686" y="-14.5" />
+              <point x="1383.5471217600957" y="613.0" />
+              <point x="1256.9408529234474" y="613.0" />
               <point x="0.0" y="14.5" />
             </edge>
             <edge source="pry" target="slop">
-              <point x="-16.666666666666686" y="-14.5" />
-              <point x="860.8756371562711" y="573.0" />
-              <point x="826.7089704896043" y="573.0" />
+              <point x="16.666666666666742" y="-14.5" />
+              <point x="734.2971217600959" y="613.0" />
+              <point x="764.9637884267624" y="613.0" />
               <point x="0.0" y="14.5" />
             </edge>
             <edge source="rspec-expectations" target="rspec-support">
               <point x="35.0" y="-14.5" />
+              <point x="1430.9408529234474" y="524.0" />
+              <point x="1453.2631555153703" y="524.0" />
               <point x="0.0" y="14.5" />
             </edge>
             <edge source="standalone_migrations" target="activerecord">
-              <point x="-52.66666666666663" y="-14.5" />
-              <point x="1167.4195674044265" y="573.0" />
-              <point x="974.4589704896044" y="573.0" />
-              <point x="974.4589704896044" y="464.0" />
-              <point x="561.0862340710933" y="464.0" />
-              <point x="34.66666666666674" y="14.5" />
+              <point x="52.66666666666674" y="-14.5" />
+              <point x="414.4812688366486" y="613.0" />
+              <point x="591.9637884267624" y="613.0" />
+              <point x="591.9637884267624" y="524.0" />
+              <point x="998.2422995780587" y="524.0" />
+              <point x="-34.66666666666663" y="14.5" />
             </edge>
             <edge source="railties" target="thor">
-              <point x="16.0" y="-14.5" />
-              <point x="1271.7818075117368" y="474.0" />
-              <point x="1324.2491448692153" y="474.0" />
+              <point x="-16.0" y="-14.5" />
+              <point x="297.25000000000006" y="514.0" />
+              <point x="286.0" y="514.0" />
               <point x="0.0" y="14.5" />
             </edge>
             <edge source="pry" target="method_source">
-              <point x="16.666666666666657" y="-14.5" />
-              <point x="894.2089704896044" y="573.0" />
-              <point x="959.2089704896043" y="573.0" />
-              <point x="959.2089704896043" y="484.0" />
-              <point x="1099.4195674044265" y="484.0" />
-              <point x="-27.5" y="14.5" />
+              <point x="0.0" y="-14.5" />
+              <point x="717.6304550934292" y="603.0" />
+              <point x="686.9637884267624" y="603.0" />
+              <point x="686.9637884267624" y="514.0" />
+              <point x="504.7214888487038" y="514.0" />
+              <point x="27.5" y="14.5" />
             </edge>
             <edge source="actionpack" target="actionview">
-              <point x="-23.0" y="-14.5" />
-              <point x="955.6695674044265" y="385.0" />
-              <point x="729.7651408450702" y="385.0" />
+              <point x="7.6666666666667425" y="-14.5" />
+              <point x="605.8881555153705" y="415.0" />
+              <point x="678.8146021699819" y="415.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="#surikat" target="passenger">
+              <point x="-18.5" y="-14.5" />
+              <point x="497.81460216998187" y="702.0" />
+              <point x="156.5" y="702.0" />
               <point x="0.0" y="14.5" />
             </edge>
             <edge source="activesupport" target="tzinfo">
-              <point x="41.25" y="-14.5" />
-              <point x="632.815811535882" y="133.0" />
-              <point x="711.1970657276995" y="133.0" />
+              <point x="-41.25" y="-14.5" />
+              <point x="963.5241862567807" y="133.0" />
+              <point x="879.3387884267624" y="133.0" />
               <point x="0.0" y="14.5" />
             </edge>
             <edge source="activesupport" target="i18n">
-              <point x="-41.25" y="-14.5" />
-              <point x="550.315811535882" y="133.0" />
-              <point x="408.5" y="133.0" />
-              <point x="14.0" y="14.5" />
-            </edge>
-            <edge source="actionview" target="erubi">
-              <point x="0.0" y="-14.5" />
-              <point x="729.7651408450702" y="286.0" />
-              <point x="743.4195674044265" y="286.0" />
-              <point x="0.0" y="14.5" />
+              <point x="41.25" y="-14.5" />
+              <point x="1046.0241862567807" y="133.0" />
+              <point x="1169.4408529234474" y="133.0" />
+              <point x="-14.0" y="14.5" />
             </edge>
             <edge source="rspec-mocks" target="diff-lcs">
               <point x="-24.5" y="-14.5" />
+              <point x="1232.4408529234474" y="524.0" />
+              <point x="1266.8464888487038" y="524.0" />
               <point x="-20.0" y="14.5" />
             </edge>
+            <edge source="actionview" target="erubi">
+              <point x="-1.1368683772161603E-13" y="-14.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="#surikat" target="rack-app">
+              <point x="-25.90000000000009" y="-14.5" />
+              <point x="490.4146021699818" y="712.0" />
+              <point x="84.5" y="712.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
             <edge source="#surikat" target="sqlite3">
-              <point x="-13.875" y="-14.5" />
-              <point x="1047.7945674044265" y="652.0" />
-              <point x="590.5923038229377" y="652.0" />
+              <point x="18.5" y="-14.5" />
+              <point x="534.8146021699819" y="702.0" />
+              <point x="1294.2312688366485" y="702.0" />
               <point x="0.0" y="14.5" />
             </edge>
             <edge source="rails-html-sanitizer" target="loofah">
               <point x="0.0" y="-14.5" />
-              <point x="1024.4195674044265" y="217.0" />
-              <point x="1071.0589704896045" y="217.0" />
+              <point x="550.8146021699818" y="207.0" />
+              <point x="468.83878842676233" y="207.0" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="#surikat" target="pry">
+              <point x="3.7000000000000455" y="-14.5" />
+              <point x="520.0146021699819" y="682.0" />
+              <point x="717.6304550934292" y="682.0" />
               <point x="0.0" y="14.5" />
             </edge>
             <edge source="actionpack" target="rack">
-              <point x="38.33333333333337" y="-14.5" />
-              <point x="1017.0029007377599" y="395.0" />
-              <point x="1202.3362340710933" y="395.0" />
-              <point x="1202.3362340710933" y="306.0" />
-              <point x="1189.5862340710933" y="306.0" />
-              <point x="14.0" y="14.5" />
-            </edge>
-            <edge source="#surikat" target="pry">
-              <point x="-4.625" y="-14.5" />
-              <point x="1057.0445674044265" y="642.0" />
-              <point x="877.5423038229378" y="642.0" />
-              <point x="0.0" y="14.5" />
+              <point x="-23.0" y="-14.5" />
+              <point x="575.2214888487038" y="425.0" />
+              <point x="471.3979355033151" y="425.0" />
+              <point x="471.3979355033151" y="326.0" />
+              <point x="144.75" y="326.0" />
+              <point x="21.0" y="14.5" />
             </edge>
             <edge source="loofah" target="crass">
-              <point x="17.0" y="-14.5" />
+              <point x="-17.0" y="-14.5" />
               <point x="0.0" y="14.5" />
             </edge>
             <edge source="#surikat" target="rspec">
-              <point x="-32.375" y="-14.5" />
-              <point x="1029.2945674044265" y="672.0" />
-              <point x="190.82206572769962" y="672.0" />
+              <point x="25.90000000000009" y="-14.5" />
+              <point x="542.214602169982" y="712.0" />
+              <point x="1404.2137884267624" y="712.0" />
               <point x="0.0" y="14.5" />
             </edge>
             <edge source="ransack" target="activesupport">
-              <point x="-14.799999999999955" y="-14.5" />
-              <point x="481.7923038229377" y="563.0" />
-              <point x="395.55357142857144" y="563.0" />
-              <point x="395.55357142857144" y="207.0" />
-              <point x="544.4229543930248" y="207.0" />
-              <point x="-47.14285714285711" y="14.5" />
+              <point x="14.799999999999955" y="-14.5" />
+              <point x="1106.8268836648576" y="603.0" />
+              <point x="1186.4408529234474" y="603.0" />
+              <point x="1186.4408529234474" y="247.0" />
+              <point x="1051.9170433996378" y="247.0" />
+              <point x="47.14285714285711" y="14.5" />
             </edge>
             <edge source="graphql-libgraphqlparser" target="graphql">
               <point x="0.0" y="-14.5" />
@@ -1495,30 +1089,32 @@
             </edge>
             <edge source="activemodel" target="activesupport">
               <point x="0.0" y="-14.5" />
-              <point x="526.4195674044265" y="217.0" />
-              <point x="560.1372401073104" y="217.0" />
-              <point x="-31.428571428571445" y="14.5" />
+              <point x="1069.4922995780587" y="257.0" />
+              <point x="1036.202757685352" y="257.0" />
+              <point x="31.428571428571445" y="14.5" />
             </edge>
             <edge source="railties" target="method_source">
-              <point x="-16.0" y="-14.5" />
-              <point x="1239.7818075117368" y="464.0" />
-              <point x="1154.4195674044265" y="464.0" />
-              <point x="27.5" y="14.5" />
-            </edge>
-            <edge source="activerecord" target="activemodel">
-              <point x="0.0" y="-14.5" />
-              <point x="0.0" y="14.5" />
+              <point x="16.0" y="-14.5" />
+              <point x="329.25000000000006" y="514.0" />
+              <point x="449.7214888487038" y="514.0" />
+              <point x="-27.5" y="14.5" />
             </edge>
             <edge source="polyamorous" target="activerecord">
               <point x="0.0" y="-14.5" />
-              <point x="455.05357142857144" y="484.0" />
-              <point x="491.7529007377598" y="484.0" />
-              <point x="-34.66666666666674" y="14.5" />
+              <point x="1126.9408529234474" y="514.0" />
+              <point x="1067.575632911392" y="514.0" />
+              <point x="34.66666666666663" y="14.5" />
+            </edge>
+            <edge source="activerecord" target="activemodel">
+              <point x="34.66666666666663" y="-14.5" />
+              <point x="1067.575632911392" y="435.0" />
+              <point x="1069.4922995780587" y="435.0" />
+              <point x="0.0" y="14.5" />
             </edge>
             <edge source="rspec-expectations" target="diff-lcs">
               <point x="-35.0" y="-14.5" />
-              <point x="153.0" y="474.0" />
-              <point x="64.5" y="474.0" />
+              <point x="1360.9408529234474" y="514.0" />
+              <point x="1306.8464888487038" y="514.0" />
               <point x="20.0" y="14.5" />
             </edge>
             <edge source="tzinfo" target="thread_safe">
@@ -1526,43 +1122,66 @@
               <point x="0.0" y="14.5" />
             </edge>
             <edge source="activerecord" target="activesupport">
-              <point x="34.66666666666674" y="-14.5" />
-              <point x="561.0862340710933" y="395.0" />
-              <point x="585.9195674044265" y="395.0" />
-              <point x="585.9195674044265" y="217.0" />
-              <point x="575.8515258215962" y="217.0" />
-              <point x="-15.71428571428578" y="14.5" />
+              <point x="-34.66666666666663" y="-14.5" />
+              <point x="998.2422995780587" y="435.0" />
+              <point x="992.4922995780587" y="435.0" />
+              <point x="992.4922995780587" y="257.0" />
+              <point x="1020.4884719710664" y="257.0" />
+              <point x="15.714285714285666" y="14.5" />
             </edge>
             <edge source="railties" target="actionpack">
-              <point x="-32.0" y="-14.5" />
-              <point x="1223.7818075117368" y="474.0" />
-              <point x="1001.6695674044265" y="474.0" />
-              <point x="23.0" y="14.5" />
+              <point x="32.0" y="-14.5" />
+              <point x="345.25000000000006" y="524.0" />
+              <point x="575.2214888487038" y="524.0" />
+              <point x="-23.0" y="14.5" />
             </edge>
             <edge source="#surikat" target="ransack">
-              <point x="-23.125" y="-14.5" />
-              <point x="1038.5445674044265" y="662.0" />
-              <point x="496.59230382293765" y="662.0" />
+              <point x="11.099999999999909" y="-14.5" />
+              <point x="527.4146021699818" y="692.0" />
+              <point x="1092.0268836648577" y="692.0" />
               <point x="0.0" y="14.5" />
             </edge>
           </edges>
           <settings layout="Hierarchic Group" zoom="0.8590062111801242" x="269.3926247288503" y="123.01626898047715" />
-          <SelectedNodes />
+          <SelectedNodes>
+            <node>activemodel</node>
+          </SelectedNodes>
           <Categories />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/templates/console.tmpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="23" selection-start-column="23" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/console">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="19" selection-start-column="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exe/surikat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="45" column="45" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/templates/base_spec.rb.tmpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="71" column="29" selection-start-line="71" selection-start-column="29" selection-end-line="71" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/surikat.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4642">
-          <caret line="282" selection-start-line="282" selection-end-line="282" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/surikat/base_queries.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        <state relative-caret-position="51">
+          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -1576,10 +1195,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exe/surikat">
+    <entry file="file://$PROJECT_DIR$/lib/surikat/version.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="169" column="42" selection-start-line="169" selection-start-column="42" selection-end-line="169" selection-end-column="42" />
+        <state relative-caret-position="17">
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
         </state>
       </provider>
     </entry>

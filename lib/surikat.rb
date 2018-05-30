@@ -1,8 +1,9 @@
 require 'surikat/version'
 
 module Surikat
-  require 'graphql/libgraphqlparser'
   require 'active_support'
+  require 'graphql/libgraphqlparser'
+
   require 'surikat/yaml_configurator'
 
   class << self
@@ -22,8 +23,8 @@ module Surikat
   %w(queries models).each do |dir|
     Dir.glob("#{FileUtils.pwd}/app/#{dir}/*.rb").each {|f| require(f)}
   end
-
   require 'surikat/types'
+
   require 'surikat/routes'
   require 'surikat/session'
 
@@ -250,8 +251,8 @@ module Surikat
         value = variables[expected_var_name]
 
         expected_var_type_singular = expected_var_type.gsub(/[\[\]]/, '')
-        expected_var_type_simple = expected_var_type.gsub(/[\[\]\!]/, '')
-        is_plural = [expected_var_type.first, expected_var_type.last] == %w([ ])
+        expected_var_type_simple   = expected_var_type.gsub(/[\[\]\!]/, '')
+        is_plural                  = [expected_var_type.first, expected_var_type.last] == %w([ ])
 
         if is_plural
           unless value.is_a? Array

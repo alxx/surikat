@@ -43,6 +43,7 @@ def list_routes
 
   %w(queries mutations).each do |group, queries|
     puts "\n#{group.capitalize}:\n----------\n"
+    next unless all_queries[group].is_a? Hash
     all_queries[group].keys.sort.each do |key|
       input_s = (all_queries[group][key]['arguments'].to_a.map {|t_name, t_type| "#{t_name}: #{t_type}"}).join(', ')
       puts "Name: #{key}, resolves in #{all_queries[group][key]['class']}##{all_queries[group][key]['method']}, result returned as #{all_queries[group][key]['output_type']}, input arguments: " +

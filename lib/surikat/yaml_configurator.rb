@@ -1,0 +1,2 @@
+module YamlConfigurator
+end

@@ -1,0 +1,28 @@
+require 'surikat/base_model'
+require 'surikat/base_type'
+
+# This Surikat AAA model class was generated automatically.
+class User < BaseModel
+
+  validates :email, uniqueness: true, presence: true
+  validates :hashed_password, presence: true
+
+  def password=(cleartext)
+    self.hashed_password = Digest::SHA256.hexdigest(cleartext)
+  end
+
+  def self.authenticate(args)
+    User.where(email: args['email'], hashed_password: Digest::SHA256.hexdigest(args['password'])).first
+  end
+
+  # We want to use +password+ instead of +hashed_password+ when we create the user
+  # This method is only used for in tests (+spec/user_spec.rb+).
+  def self.random_params
+    {
+        'email' => "some_#{SecureRandom.hex(5)}@email.com",
+        'password' => 'some password',
+        'roleids' => 'user,admin,superadmin'
+    }
+  end
+
+end

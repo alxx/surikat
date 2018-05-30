@@ -27,12 +27,6 @@ module Surikat
       end
     end
 
-    # def create
-    #   key = SecureRandom.hex(30)
-    #   merge! key, {created_at: Time.now}
-    #   key
-    # end
-
     def merge!(key, hash)
       return if key.nil?
 

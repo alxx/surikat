@@ -373,7 +373,7 @@ come with a solution to this issue. Until then, you have to adapt the tests to y
 
 ### Web Server
 
-Surikat uses (Phusion Passenger)[https://www.phusionpassenger.com/] as a web server. Simply type
+Surikat uses [Phusion Passenger](https://www.phusionpassenger.com/) as a web server. Simply type
 
 ```bash
 passenger serve

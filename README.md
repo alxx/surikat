@@ -1,5 +1,7 @@
 # Surikat
 
+![Surikat](https://i.imgur.com/OlCUw38.png)
+
 ## A backend web framework centred around GraphQL.
 
 Many frontend apps require little more than a simple backend that does a few CRUD operations

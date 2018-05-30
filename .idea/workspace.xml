@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66400b9f-bfb7-48ab-a1ab-331b1d21e8c6" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/surikat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/surikat.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/surikat/version.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/surikat/version.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/surikat.gemspec" beforeDir="false" afterPath="$PROJECT_DIR$/surikat.gemspec" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,8 +49,17 @@
       <file leaf-file-name="surikat.gemspec" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/surikat.gemspec">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="68" selection-start-line="26" selection-start-column="68" selection-end-line="26" selection-end-column="68" />
+            <state relative-caret-position="765">
+              <caret line="45" column="44" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="version.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/surikat/version.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -165,9 +176,9 @@
         <option value="$PROJECT_DIR$/lib/surikat/templates/database.yml.tmpl" />
         <option value="$PROJECT_DIR$/lib/surikat/templates/config.ru.tmpl" />
         <option value="$PROJECT_DIR$/TODO" />
-        <option value="$PROJECT_DIR$/lib/surikat/version.rb" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/lib/surikat/version.rb" />
         <option value="$PROJECT_DIR$/surikat.gemspec" />
       </list>
     </option>
@@ -222,13 +233,6 @@
               <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="surikat" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="surikat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="surikat" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="surikat" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -278,7 +282,7 @@
       <workItem from="1526473553950" duration="20600000" />
       <workItem from="1527061061177" duration="45000" />
       <workItem from="1527080050867" duration="68864000" />
-      <workItem from="1527681663233" duration="7911000" />
+      <workItem from="1527681663233" duration="8346000" />
     </task>
     <task id="LOCAL-00001" summary="no gem">
       <created>1527697580402</created>
@@ -308,11 +312,18 @@
       <option name="project" value="LOCAL" />
       <updated>1527702361990</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fixed .gemspec">
+      <created>1527702530762</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1527702530762</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120867000" />
+    <option name="totallyTimeSpent" value="121302000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -686,13 +697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/surikat/version.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/surikat/templates/config.ru.tmpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
@@ -724,10 +728,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/version.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/surikat.gemspec">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="68" selection-start-line="26" selection-start-column="68" selection-end-line="26" selection-end-column="68" />
+        <state relative-caret-position="765">
+          <caret line="45" column="44" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="44" />
         </state>
       </provider>
     </entry>

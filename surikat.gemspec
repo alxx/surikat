@@ -44,5 +44,6 @@ Gem::Specification.new do |spec|
 #  spec.add_development_dependency "ransack", "~> 1.8", ">= 1.8.2"
 
   spec.add_runtime_dependency "oj", "~> 3.3"
+  spec.add_runtime_dependency "standalone_migrations", "~> 5.2.5"
 
 end

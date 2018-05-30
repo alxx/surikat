@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66400b9f-bfb7-48ab-a1ab-331b1d21e8c6" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/console" beforeDir="false" afterPath="$PROJECT_DIR$/bin/console" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exe/surikat" beforeDir="false" afterPath="$PROJECT_DIR$/exe/surikat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/surikat.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/surikat.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/surikat/base_model.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/surikat/base_model.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/surikat/templates/base_spec.rb.tmpl" beforeDir="false" afterPath="$PROJECT_DIR$/lib/surikat/templates/base_spec.rb.tmpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/surikat/templates/console.tmpl" beforeDir="false" afterPath="$PROJECT_DIR$/lib/surikat/templates/console.tmpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/surikat/version.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/surikat/version.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/surikat-0.2.2.gem" beforeDir="false" afterPath="$PROJECT_DIR$/surikat-0.2.2.gem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,12 +22,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="532">
-                <caret line="384" column="10" selection-start-line="384" selection-start-column="10" selection-end-line="384" selection-end-column="10" />
+              <first_editor relative-caret-position="717">
+                <caret line="167" column="3" selection-start-line="167" selection-start-column="3" selection-end-line="167" selection-end-column="3" />
               </first_editor>
               <second_editor />
             </state>
@@ -60,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="version.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="version.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/surikat/version.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+            <state relative-caret-position="51">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -94,7 +86,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>database.</find>
       <find>yaml_config</find>
       <find>.config</find>
       <find>surikat_ses</find>
@@ -124,6 +115,7 @@
       <find>puts 71</find>
       <find>puts 'eee</find>
       <find>Author</find>
+      <find>puts</find>
     </findStrings>
     <replaceStrings>
       <replace>@@routes</replace>
@@ -181,7 +173,6 @@
         <option value="$PROJECT_DIR$/lib/surikat/templates/config.ru.tmpl" />
         <option value="$PROJECT_DIR$/TODO" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/surikat.gemspec" />
         <option value="$PROJECT_DIR$/bin/console" />
         <option value="$PROJECT_DIR$/lib/surikat/templates/console.tmpl" />
@@ -190,6 +181,7 @@
         <option value="$PROJECT_DIR$/lib/surikat/base_model.rb" />
         <option value="$PROJECT_DIR$/lib/surikat/templates/base_spec.rb.tmpl" />
         <option value="$PROJECT_DIR$/lib/surikat/version.rb" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -304,7 +296,7 @@
       <workItem from="1526473553950" duration="20600000" />
       <workItem from="1527061061177" duration="45000" />
       <workItem from="1527080050867" duration="68864000" />
-      <workItem from="1527681663233" duration="13661000" />
+      <workItem from="1527681663233" duration="13807000" />
     </task>
     <task id="LOCAL-00001" summary="no gem">
       <created>1527697580402</created>
@@ -362,11 +354,18 @@
       <option name="project" value="LOCAL" />
       <updated>1527705324011</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fixed gem dependency issues and a scaffold templating issue">
+      <created>1527709554306</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1527709554306</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126617000" />
+    <option name="totallyTimeSpent" value="126763000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -416,7 +415,8 @@
     <MESSAGE value="fixed .gemspec" />
     <MESSAGE value="runtime deps" />
     <MESSAGE value="fixed issues with fresh project" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed issues with fresh project" />
+    <MESSAGE value="fixed gem dependency issues and a scaffold templating issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed gem dependency issues and a scaffold templating issue" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -653,16 +653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="532">
-            <caret line="384" column="10" selection-start-line="384" selection-start-column="10" selection-end-line="384" selection-end-column="10" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -1197,8 +1187,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/surikat/version.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="717">
+            <caret line="167" column="3" selection-start-line="167" selection-start-column="3" selection-end-line="167" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

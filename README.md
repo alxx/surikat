@@ -382,6 +382,16 @@ Example query:
 }
 ```
 
+## System Dependencies
+
+For improved performance, Surikat uses a C++ library to parse GraplQL queries, [libgraphqlparser](https://github.com/graphql/libgraphqlparser).
+
+On Mac OS X, install with Homebrew:
+
+```bash
+brew install libgraphqlparser
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

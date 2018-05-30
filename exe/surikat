@@ -167,6 +167,8 @@ def exemplify(arguments)
 
   route, collection = nil, nil
   %w(queries mutations).each do |col|
+    next unless all_routes[col].is_a? Hash
+
     fr = all_routes[col].keys.detect do |r|
       qr = all_routes[col][r]
       [qr['class'], qr['method']] == [class_n, method_n]

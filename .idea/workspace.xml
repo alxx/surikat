@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66400b9f-bfb7-48ab-a1ab-331b1d21e8c6" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/surikat.gemspec" beforeDir="false" afterPath="$PROJECT_DIR$/surikat.gemspec" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,11 +35,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="255">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="surikat.gemspec" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/surikat.gemspec">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="26" column="68" selection-start-line="26" selection-start-column="68" selection-end-line="26" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -64,7 +73,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>YamlCon</find>
       <find>surikat_sess</find>
       <find>@@opt</find>
       <find>base_que</find>
@@ -94,6 +102,7 @@
       <find>BASI</find>
       <find>ARGUMENTS:</find>
       <find>Redis.n</find>
+      <find>TODO</find>
     </findStrings>
     <replaceStrings>
       <replace>@@routes</replace>
@@ -122,7 +131,6 @@
         <option value="$PROJECT_DIR$/lib/surikat/main.rb" />
         <option value="$PROJECT_DIR$/lib/surikat/templates/.rspec.tmpl" />
         <option value="$PROJECT_DIR$/lib/surikat/templates/spec_helper.rb.tmpl" />
-        <option value="$PROJECT_DIR$/surikat.gemspec" />
         <option value="$PROJECT_DIR$/lib/surikat/templates/Gemfile.tmpl" />
         <option value="$PROJECT_DIR$/bin/console" />
         <option value="$PROJECT_DIR$/lib/surikat/templates/base_aaa_model.rb" />
@@ -160,6 +168,7 @@
         <option value="$PROJECT_DIR$/lib/surikat/version.rb" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/surikat.gemspec" />
       </list>
     </option>
   </component>
@@ -269,7 +278,7 @@
       <workItem from="1526473553950" duration="20600000" />
       <workItem from="1527061061177" duration="45000" />
       <workItem from="1527080050867" duration="68864000" />
-      <workItem from="1527681663233" duration="7600000" />
+      <workItem from="1527681663233" duration="7911000" />
     </task>
     <task id="LOCAL-00001" summary="no gem">
       <created>1527697580402</created>
@@ -285,11 +294,25 @@
       <option name="project" value="LOCAL" />
       <updated>1527697910052</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added .gem file">
+      <created>1527702207459</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1527702207459</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fixed .gemspec">
+      <created>1527702361990</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1527702361990</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120556000" />
+    <option name="totallyTimeSpent" value="120867000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -335,7 +358,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="no gem" />
     <MESSAGE value="added surikat png" />
-    <option name="LAST_COMMIT_MESSAGE" value="added surikat png" />
+    <MESSAGE value="added .gem file" />
+    <MESSAGE value="fixed .gemspec" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed .gemspec" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -605,13 +630,6 @@
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/surikat.gemspec">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/surikat/new_app.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="609">
@@ -701,8 +719,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/surikat.gemspec">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="68" selection-start-line="26" selection-start-column="68" selection-end-line="26" selection-end-column="68" />
         </state>
       </provider>
     </entry>

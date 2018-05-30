@@ -1,0 +1,39 @@
+require 'test_helper'
+
+describe HelloQueries do
+  context "When greeting" do
+    describe "Surikat" do
+      it "should respond nicely" do
+        response = Surikat.run '{Hello}', {}
+        expect(response['Hello']).to eq 'world'
+      end
+    end
+  end
+
+  context "When testing session management" do
+    describe "Surikat" do
+      it "should persist data in session between requests" do
+        query = "{AddSession}"
+        response = Surikat::run(query, {}, {session_key: 'abc'})
+        expect(response['AddSession']).to include ','
+
+        key, val = response['AddSession'].split(',')
+        query = '{ShowSession}'
+        response = Surikat::run(query, {}, {session_key: 'abc'})
+        expect(response['ShowSession']).to include val
+        expect(response['ShowSession']).to include key
+      end
+
+      it "should not persist data across different sessions" do
+        query = "{AddSession}"
+        response = Surikat::run(query, {}, {session_key: 'abc'})
+        expect(response['AddSession']).to include ','
+
+        _, val = response['AddSession'].split(',')
+        query = '{ShowSession}'
+        response = Surikat::run(query, {}, {session_key: 'def'})
+        expect(response['ShowSession']).to_not include val
+      end
+    end
+  end
+end

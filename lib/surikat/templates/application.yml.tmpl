@@ -1,0 +1,14 @@
+# Application Configuration
+development:
+  session:
+    storage: file
+
+test:
+  session:
+    storage: file
+    file: tmp/test_session_store
+
+production:
+  session:
+    storage: redis
+    url: localhost

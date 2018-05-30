@@ -1,8 +1,8 @@
-require 'surikat/base_model'
-require 'surikat/base_type'
+# This Surikat model class was generated automatically.
 
-# This Surikat AAA model class was generated automatically.
-class User < BaseModel
+class User < Surikat::BaseModel
+
+   # Add your own validation rules, instance methods, relationships etc.
 
   validates :email, uniqueness: true, presence: true
   validates :hashed_password, presence: true

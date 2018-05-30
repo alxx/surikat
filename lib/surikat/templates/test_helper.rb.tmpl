@@ -1,0 +1,30 @@
+require 'fileutils'
+
+ENV['RACK_ENV'] = 'test'
+
+require 'surikat'
+
+require 'rake'
+
+`rake db:reset DB=test`
+
+# In test mode we always start with a new session storage, if we're using a file session storage.
+if Surikat.config.app['session']['storage'] == 'file'
+  if File.exists? Surikat.config.app['session']['file']
+    File.unlink(Surikat.config.app['session']['file'])
+  end
+end
+
+['queries', 'models'].each do |dir|
+  Dir.glob("#{FileUtils.pwd}/app/#{dir}/*.rb").each {|f| require(f)}
+end
+
+Dir.glob("#{FileUtils.pwd}/config/initializers/*.rb").sort.each do |file|
+  require file
+end
+
+def dates2string(hash)
+  hash.each do |k, v|
+    hash[k] = v.to_s if v.class.to_s.in?(['Date','Time','DateTime'])
+  end
+end

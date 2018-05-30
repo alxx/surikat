@@ -1,0 +1,151 @@
+require 'test_helper'
+
+describe AAAQueries do
+
+  before :all do
+    @user = User.create email:'a@b.com', password: 'onetwothree', roleids: 'worker'
+    @superadmin = User.create email:'super@a.com', password: 'onetwothree', roleids: 'superadmin'
+  end
+
+  before :each do
+    @session_key = SecureRandom.hex(5)
+  end
+
+  context "When testing Authentication, Authorization and Access" do
+    describe "#authentication" do
+
+      it "should correctly authenticate User" do
+        query = "{ Authenticate(email: \"a@b.com\", password: \"onetwothree\") }"
+        response = Surikat::run query
+
+        expect(response['Authenticate']).to be true
+      end
+
+      it "should incorrectly authenticate User" do
+        query = "{ Authenticate(email: \"a@b.com\", password: \"definitely not onetwothree\") }"
+        response = Surikat::run query
+
+        expect(response['Authenticate']).to eq :error => 'No result'
+      end
+    end
+
+    describe "#authorization" do
+
+      it "should allow a logged in user to access a private route" do
+        # First, log a user in
+        query = "{ Authenticate(email: \"a@b.com\", password: \"onetwothree\") }"
+        Surikat::run query, {}, session_key: @session_key
+
+        # Then, make sure they have access to a private query
+        query    = "{ DemoOne }"
+        response = Surikat::run query, {}, session_key: @session_key
+
+        expect(response['DemoOne']).to include "if you see this"
+      end
+
+      it "should not allow a non-logged in user to access a private route" do
+        query    = "{ DemoOne }"
+        response = Surikat::run query
+        expect(response['DemoOne']).to_not include "if you see this"
+      end
+
+
+      it "should log out a user" do
+        # First, log a user in
+        query = "{ Authenticate(email: \"a@b.com\", password: \"onetwothree\") }"
+        Surikat::run query, {}, session_key: @session_key
+
+        # Then, log them out
+        query = "{ Logout }"
+        response = Surikat::run query, {}, {session_key: @session_key}
+        expect(response['Logout']).to be true
+
+        # Then, check that they don't have access to a private query
+        query    = "{ DemoOne }"
+        response = Surikat::run query, {}, {session_key: @session_key}
+
+        expect(response['DemoOne']).not_to include "if you see this"
+      end
+
+      it "should retrieve the current user" do
+        # First, log a user in
+        query       = "{ Authenticate(email: \"a@b.com\", password: \"onetwothree\") }"
+        Surikat::run query, {}, {session_key: @session_key}
+
+        query    = "{ CurrentUser {id} }"
+        response = Surikat::run query, {}, {session_key: @session_key}
+
+        expect(response['CurrentUser']).to eq 'id' => @user.id
+      end
+    end
+
+    describe "#access" do
+      it "should not allow a user of the wrong role to a route protected by roles" do
+        # First, log a user in
+        query = "{ Authenticate(email: \"a@b.com\", password: \"onetwothree\") }"
+        Surikat::run query, {}, session_key: @session_key
+
+        # Then, make sure they do not have access to a private query
+        query    = "{ DemoTwo }"
+        response = Surikat::run query, {}, {session_key: @session_key}
+
+        expect(response['DemoTwo']).to_not include 'if you see this'
+      end
+
+      it "should allow a user of the right role to a route protected by roles" do
+        # First, log a user in
+        query = "{ Authenticate(email: \"a@b.com\", password: \"onetwothree\") }"
+        Surikat::run query, {}, session_key: @session_key
+
+        # Then, make sure they have access to a private query
+        query    = "{ DemoThree }"
+        response = Surikat::run query, {}, {session_key: @session_key}
+
+        expect(response['DemoThree']).to include "if you see this"
+      end
+
+      it "should allow a superadmin to login as another user" do
+        # First, log a superadmin in
+        query       = "{ Authenticate(email: \"#{@superadmin.email}\", password: \"onetwothree\") }"
+        response    = Surikat::run query, {}, session_key: @session_key
+        session_key = response['Authenticate']
+
+        # Then, create another user and login as them
+        user = User.create_random
+
+        query = "{ LoginAs(user_id: #{user.id}) }"
+        Surikat::run query, {}, {session_key: @session_key}
+
+        # To test, use the CurrentUser query
+        query    = "{ CurrentUser {id} }"
+        response = Surikat::run query, {}, {session_key: @session_key}
+
+        expect(response['CurrentUser']).to include 'id' => user.id
+      end
+
+      it "should allow a superadmin to return after having logged in as someone else" do
+        # First, log a superadmin in
+        query       = "{ Authenticate(email: \"#{@superadmin.email}\", password: \"onetwothree\") }"
+        Surikat::run query, {}, session_key: @session_key
+
+        # Then, create another user and login as them
+        user = User.create_random
+
+        query = "{ LoginAs(user_id: #{user.id}) }"
+        Surikat::run query, {}, {session_key: @session_key}
+
+        # Then, go back as the superadmin
+        query = " { BackFromLoginAs }"
+        Surikat::run query, {}, {session_key: @session_key}
+
+        # To test, use the CurrentUser query
+        query    = "{ CurrentUser {id} }"
+        response = Surikat::run query, {}, {session_key: @session_key}
+
+        expect(response['CurrentUser']).to include 'id' => @superadmin.id
+      end
+
+    end
+  end
+
+end

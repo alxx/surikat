@@ -13,8 +13,10 @@
 # 'Authors' => {module: 'AuthorQueries', method: 'all', output_type: '[Author]', 'arguments' => {}}
 class Routes
 
+  require 'oj'
+
   def initialize
-    @filename = File.expand_path('.',__dir__) + '/../../config/routes.json'
+    @filename = "#{FileUtils.pwd}/config/routes.yml"
     @routes = load
   end
 
@@ -41,7 +43,7 @@ class Routes
   end
 
   def delete_mutation mutation_name
-    aise "Mutation #{mutation_name} not found" if @routes['mutations'].nil? || !(@routes['mutations']&.keys&.include?(mutation_name))
+    raise "Mutation #{mutation_name} not found" if @routes['mutations'].nil? || !(@routes['mutations']&.keys&.include?(mutation_name))
     @routes['mutations'].delete mutation_name
     save
   end
@@ -54,11 +56,11 @@ class Routes
   private
   def load
     return {} unless File.exists?(@filename)
-    Oj.load File.read(@filename)
+    YAML.load_file @filename
   end
 
   def save
-    File.open(@filename, 'w') { |file| file.write(JSON.pretty_generate(@routes))}
+    File.open(@filename, 'w') { |file| file.write(@routes.to_yaml)}
   end
 
 

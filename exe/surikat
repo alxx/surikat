@@ -5,16 +5,20 @@ require 'active_support'
 require 'benchmark'
 require 'oj'
 
+require 'standalone_migrations'
+
 require 'surikat/types'
 require 'surikat/routes'
 require 'surikat/scaffold'
+require 'surikat/new_app'
 
 include Scaffold
+include NewApp
 
 def generate arguments
-  available_targets = %w(scaffold model)
+  available_targets = %w(scaffold model aaa migration)
   if arguments.to_a.empty?
-    puts "Syntax: #{$0} generate target [options]\nAvailable targets: #{available_targets.join(', ')}"
+    puts "Syntax: surikat generate target [options]\nAvailable targets: #{available_targets.join(', ')}"
     return
   end
 
@@ -25,27 +29,12 @@ def generate arguments
     generate_scaffold arguments
   when 'model'
     generate_model arguments.shift, arguments
+  when 'aaa'
+    generate_aaa
+  when 'migration'
+    StandaloneMigrations::Generator.migration arguments.shift, arguments
   else
-    puts "Sorry, I don't know how to generate '#{target}'. Available targets are: #{available_targets.join(', ')}"
-  end
-end
-
-def destroy arguments
-  available_targets = %w(model types queries routes)
-  if arguments.to_a.empty?
-    puts "Syntax: #{$0} destroy target [options]\nAvailable targets: #{available_targets.join(', ')}"
-    return
-  end
-
-  target = arguments.shift
-
-  case target
-  when 'model'
-    destroy_model arguments.shift
-  when 'scaffold'
-    destroy_scaffold arguments.shift
-  else
-    puts "Sorry, I don't know how to destroy '#{target}'. Available targets are: #{available_targets.join(', ')}"
+    puts "Sorry, I don' t know how to generate '#{target}'. Available targets are: #{available_targets.join(', ')}"
   end
 end
 
@@ -56,7 +45,7 @@ def list_routes
     puts "\n#{group.capitalize}:\n----------\n"
     all_queries[group].keys.sort.each do |key|
       input_s = (all_queries[group][key]['arguments'].to_a.map {|t_name, t_type| "#{t_name}: #{t_type}"}).join(', ')
-      puts "Name: #{key}, resolves in #{all_queries[group][key]['module']}::#{all_queries[group][key]['method']}, result returned as #{all_queries[group][key]['output_type']}, input arguments: " +
+      puts "Name: #{key}, resolves in #{all_queries[group][key]['class']}##{all_queries[group][key]['method']}, result returned as #{all_queries[group][key]['output_type']}, input arguments: " +
                (input_s.empty? ? 'None' : "{#{input_s}}")
     end
   end
@@ -68,12 +57,130 @@ def list_types
   {'Output' => 'fields', 'Input' => 'arguments'}.each do |type_direction, enums|
     puts "\n#{type_direction} types:\n-----------------------"
     all_types.keys.select {|t_name| all_types[t_name]['type'] == type_direction}.sort.each do |type_key|
-      puts "\nName: #{type_key}, applies to objects of class: #{all_types[type_key]['class']}"
+      puts "\nName: #{type_key}"
       all_types[type_key][enums].to_a.each do |t_name, t_type|
         puts "\t#{t_name}: #{t_type}"
       end
     end
   end
+end
+
+def output_type_selectors(fields, all_types, stack)
+  depth = stack.count + 2
+  return '' if fields&.empty? || depth > 100
+
+  spaces       = '  ' * depth
+  fewer_spaces = '  ' * (depth - 1)
+
+  " {\n" + fields.map do |f, t|
+    t_singular = t.gsub(/[\[\]\!]/, '')
+    if Types::BASIC.include?(t_singular)
+      "#{spaces}#{f}"
+    else
+      sub_type   = all_types[t_singular]
+      stack.include?(f) ?
+          nil
+          : "#{fewer_spaces}  #{f}#{output_type_selectors(sub_type['fields'], all_types, stack + [f])}"
+    end
+  end.compact.join("\n") + "\n#{fewer_spaces}}"
+end
+
+def exemplify_queries(query_name, route)
+  unless (r_args = route['arguments']).blank?
+    arguments = '(' + r_args.map {|k, v| "#{k}: #{random_values(v)}"}.join(', ') + ')'
+  else
+    arguments = ''
+  end
+
+  output_type_singular = route['output_type'].gsub(/[\[\]\!]/, '')
+  all_types            = Types.new.all
+  output_type          = all_types[output_type_singular]
+
+  if Types::BASIC.include?(output_type_singular)
+    selectors = ''
+  else
+    selectors = output_type_selectors(output_type['fields'], all_types, [])
+  end
+
+  query_text = "{\n  #{query_name}#{arguments}#{selectors}\n}"
+
+  puts "Query:\n#{query_text}"
+
+  puts "\n\ncurl command:\ncurl 0:3000 -X POST -d 'query=#{CGI::escape(query_text)}'"
+end
+
+def exemplify_mutations(query_name, route)
+  unless (r_args = route['arguments']).blank?
+    arguments_types = '(' + r_args.map do |k, v|
+      kk = ActiveSupport::Inflector.singularize(k.underscore)
+      "$#{kk}: #{v}"
+    end.join(', ') + ')'
+
+    arguments_vars = '(' + r_args.map do |k, v|
+      kk = ActiveSupport::Inflector.singularize(k.underscore)
+      "#{kk}: $#{kk}"
+    end.join(', ') + ')'
+  else
+    arguments_types = ''
+    arguments_vars  = ''
+  end
+
+  output_type_singular = route['output_type'].gsub(/[\[\]\!]/, '')
+  all_types            = Types.new.all
+  output_type          = all_types[output_type_singular]
+
+  if Types::BASIC.include?(output_type_singular)
+    selectors = ''
+  else
+    selectors = output_type_selectors(output_type['fields'], all_types, [])
+  end
+
+  query_text = "mutation #{query_name}#{arguments_types} {\n  #{query_name}#{arguments_vars}#{selectors}\n}"
+
+  variables = {}
+
+  r_args.each.each do |var_name, var_type|
+    k_var_name = ActiveSupport::Inflector.singularize(var_name.underscore)
+    variables[k_var_name] = {}
+    all_types[var_type]['arguments'].each do |a, t|
+      next if a == 'id' && route['method'] == 'create' # yes, someone may make create queries with other names
+      if Types::BASIC.include?(t)
+        variables[k_var_name][a] = random_values(t)
+      else
+        variables[k_var_name][a] = "vars for #{t}" # TODO - recurse to generate variables for custom type t
+      end
+    end
+  end
+
+  puts "Query:\n#{query_text}\n\nVariables:\n#{JSON.pretty_generate(variables)}"
+
+  puts "\n\ncurl command:\ncurl 0:3000 -X POST -d 'query=#{CGI::escape(query_text)}' -d 'variables=#{CGI::escape(Oj.dump(variables))}'"
+
+end
+
+# build example queries for a specific query
+# Works with two arguments (class name and method name, for example 'BookQueries get')
+def exemplify(arguments)
+  all_routes = Routes.new.all
+
+  class_n, method_n = arguments[0], arguments[1]
+
+  route, collection = nil, nil
+  %w(queries mutations).each do |col|
+    fr = all_routes[col].keys.detect do |r|
+      qr = all_routes[col][r]
+      [qr['class'], qr['method']] == [class_n, method_n]
+    end
+
+    (route, collection = fr, col) if fr
+  end
+
+  unless route
+    puts "No route found for given class and method.\nUsage: surikat exemplify query_class_name method_name\nExample: surikat exemplify AuthorQueries get"
+    return
+  end
+
+  send "exemplify_#{collection}", route, all_routes[collection][route]
 end
 
 def list(arguments)
@@ -86,119 +193,8 @@ def list(arguments)
   when 'routes'
     list_routes
   else
-    puts "Usage: #{$0} list #{available_targets.join('|')}"
+    puts "Usage: surikat list #{available_targets.join('|')}"
   end
-end
-
-def output_type_selectors(fields, all_types, depth)
-  return '' if fields&.empty?
-
-  spaces       = '  ' * depth
-  fewer_spaces = '  ' * (depth - 1)
-
-  " {\n" + fields.map do |f, t|
-    if Types::BASIC.include?(t)
-      "#{spaces}#{f}"
-    else
-      t_singular = t.gsub('[', '').gsub(']', '')
-      sub_type   = all_types[t_singular]
-      "#{fewer_spaces}  #{f}#{output_type_selectors(sub_type['fields'], all_types, depth + 1)}"
-    end
-  end.join("\n") + "\n#{fewer_spaces}}"
-end
-
-def exemplify_query(route)
-  query_name = route.keys.first
-
-  if (r_args = route[query_name]['arguments']).any?
-    arguments = '(' + r_args.map {|k, v| "#{k}: #{random_values(v)}"}.join(', ') + ')'
-  else
-    arguments = ''
-  end
-
-  output_type_singular = route[query_name]['output_type'].gsub('[', '').gsub(']', '')
-  all_types            = Types.new.all
-  output_type          = all_types[output_type_singular]
-
-  if Types::BASIC.include?(output_type_singular)
-    selectors = ''
-  else
-    selectors = output_type_selectors(output_type['fields'], all_types, 2)
-  end
-
-  query_text = "{\n  #{query_name}#{arguments}#{selectors}\n}"
-
-  puts "Query:\n#{query_text}"
-
-  puts "\n\ncurl command:\ncurl 0:3000 -X POST -d 'query=#{CGI::escape(query_text)}'"
-end
-
-def exemplify_mutation(route)
-  puts "ROUTE: #{route.inspect}"
-
-  query_name = route.keys.first
-
-  if (r_args = route[query_name]['arguments']).any?
-    arguments_types = '(' + r_args.map do |k, v|
-      "$#{k}: #{v}"
-    end.join(', ') + ')'
-
-    arguments_vars = '(' + r_args.map do |k, v|
-      "#{k}: $#{k}"
-    end.join(', ') + ')'
-  else
-    arguments_types = ''
-    arguments_vars  = ''
-  end
-
-  output_type_singular = route[query_name]['output_type'].gsub('[', '').gsub(']', '')
-  all_types            = Types.new.all
-  output_type          = all_types[output_type_singular]
-
-  if Types::BASIC.include?(output_type_singular)
-    selectors = ''
-  else
-    selectors = output_type_selectors(output_type['fields'], all_types, 2)
-  end
-
-  query_text = "mutation #{query_name}#{arguments_types} {\n  #{query_name}#{arguments_vars}#{selectors}\n}"
-
-  variables = {}
-
-  r_args.each.each do |var_name, var_type|
-    variables[var_name] = {}
-    all_types[var_type]['arguments'].each do |a, t|
-      next if a == 'id' && route[query_name]['method'] == 'create' # yes, someone may make create queries with other names
-      if Types::BASIC.include?(t)
-        variables[var_name][a] = random_values(t)
-      else
-        variables[var_name][a] = "vars for #{t}" # TODO - recurse to generate variables for custom type t
-      end
-    end
-  end
-
-  puts "Query:\n#{query_text}\n\nVariables:\n#{JSON.pretty_generate(variables)}"
-
-  puts "\n\ncurl command:\ncurl 0:3000 -X POST -d 'query=#{CGI::escape(query_text)}' -d 'variables=#{CGI::escape(Oj.dump(variables))}'"
-
-end
-
-# build example queries for a specific query
-def exemplify(arguments)
-  all_routes = Routes.new.all
-
-  module_n, method_n = arguments[0], arguments[1]
-
-  query_route    = all_routes['queries'].keys.detect {|r| all_routes['queries'][r]['module'] == module_n && all_routes['queries'][r]['method'] == method_n}
-  mutation_route = all_routes['mutations'].keys.detect {|r| all_routes['mutations'][r]['module'] == module_n && all_routes['mutations'][r]['method'] == method_n}
-
-  if query_route.nil? && mutation_route.nil?
-    puts "No route found for given module and method.\nUsage: #{$0} exemplify query_module_name method_name\nExample: #{$0} exemplify AuthorQueries get"
-    return
-  end
-
-  exemplify_query(all_routes['queries'].select {|k, v| k == query_route}) if query_route
-  exemplify_mutation(all_routes['mutations'].select {|k, v| k == mutation_route}) if mutation_route
 end
 
 def random_values(type)
@@ -207,152 +203,18 @@ def random_values(type)
       'Int'     => 100,
       'Float'   => 3.14,
       'Boolean' => true,
-      'String'  => 'something'
+      'String'  => '"something"'
   }[type]
 end
 
-def new_app(arguments)
-  app_name = arguments.first
 
-  if app_name.nil?
-    puts "Usage: #{$0} new app_name\nCreates a new, empty Surikat app"
-    return
-  end
-
-  # Create app directory structure
-  dirs = [ nil,  "/bin", "/app/models", "/app/queries", "/log", "/tmp/pid", "/config/initializers", "/db" ]
-  dirs.each do |dir|
-    print "Create directory #{app_name}#{dir}... "
-    FileUtils.mkdir_p "#{app_name}#{dir}"
-    puts "ok"
-  end
-
-  # Create Gemfile
-  tmpl = <<EOT
-source 'https://rubygems.org'
-
-# This is a rack app
-gem 'rack-app'
-
-# ActiveRecord is used as a database layer
-gem 'activerecord'
-
-# ActiveSupport for various duties
-gem 'activesupport'
-
-# Surikat is the engine of the app
-gem 'surikat'
-
-# The web server
-gem 'passenger', ">= 5.0.25", require: "phusion_passenger/rack_handler"
-
-# A faster JSON parser
-gem 'oj'
-
-# The initial database is SQLite
-gem 'sqlite3'
-EOT
-
-  print "Create Gemfile... "
-  File.open("#{app_name}/Gemfile", 'w') { |f| f.write tmpl }
-  puts "ok"
-
-  # Create config.ru
-  tmpl = <<EOT
-require 'rack/app'
-require 'oj'
-require 'surikat'
-
-class #{app_name.capitalize} < Rack::App
-
-  post '/' do
-
-    #puts "\n\nPAYLOAD:\n#{payload.inspect}\n\n"
-
-    # first, try to parse it as JSON
-    json_payload = Oj.load(payload) rescue nil
-
-    if json_payload
-      query, variables = json_payload['query'], json_payload['variables']
-    else # then, as parameters
-      split_payload, query, variables = payload.split('&'), nil, nil
-      split_payload.to_a.each do |line|
-        split_line  = line.split('=')
-        name, value = split_line.to_a[0], split_line.to_a[1, 1000].join('=')
-
-        query       = CGI::unescape(value) if name == 'query'
-        variables   = CGI::unescape(value) if name == 'variables'
-
-        variables   = Oj.load(variables) if !variables.to_s.empty?
-      end
-    end
-
-    result = Main::run query, variables, debug: false
-    Oj.dump result
-  end
-end
-
-run #{app_name.capitalize}
-EOT
-
-  print "Create config.ru... "
-  File.open("#{app_name}/config.ru", 'w') { |f| f.write tmpl }
-  puts "ok"
-
-  # Create HelloQuery
-  tmpl = <<EOT
-module Queries
-  module HelloQuery
-    def self.hello(_arguments)
-      'world'
-    end
-  end
-end
-EOT
-
-  print "Create #{app_name}/queries/hello_queries.rb... "
-  File.open("#{app_name}/queries/hello_queries.rb", 'w') { |f| f.write tmpl }
-  puts "ok"
-
-  # Create a route
-  tmpl = <<EOT
-{
-  "queries": {
-    
-    "Hello": {
-      "module": "HelloQuery",
-      "method": "hello",
-      "output_type": "String",
-      "arguments": {}
-    }
-  },
-  "mutations": {}
-}
-EOT
-  print "Create a route for HelloQueries... "
-  print "Create #{app_name}/config/routes.json... "
-  File.open("#{app_name}/config/routes.json", 'w') { |f| f.write tmpl }
-  puts "ok"
-
-  puts "Done. What next?\n"
-  puts "cd #{app_name}"
-  puts "bundle install"
-  puts "passenger start"
-  puts "\n\nGot GraphiQL?"
-  puts "\tEnter the URL: http://localhost:3000/"
-  puts "\tEnter the query: {Hello}"
-  puts "\n\nNo way to run a GraphQL query yet? Just try from any browser: http://localhost:3000/?query=%7BHello%7B\n\n"
-end
-
-##########
-
-ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: File.expand_path('.', __dir__) + '/../../dbfile')
+#########################
 
 command            = ARGV.shift
 available_commands = %w(new generate destroy list exemplify)
 
 if command.nil?
-  puts "Usage: #{$0} command arguments\nAvailable commands: #{available_commands.join(', ')}"
+  puts "Usage: surikat command arguments\nAvailable commands: #{available_commands.join(', ')}"
   exit
 end
 
@@ -361,8 +223,6 @@ when 'new'
   new_app ARGV
 when 'generate'
   generate ARGV
-when 'destroy'
-  destroy ARGV
 when 'list'
   list ARGV
 when 'exemplify'

@@ -1,11 +1,730 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="66400b9f-bfb7-48ab-a1ab-331b1d21e8c6" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/surikat.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.rspec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rakefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/console" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/setup" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe/surikat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surikat.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surikat/base_model.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surikat/base_queries.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surikat/base_type.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surikat/configurations.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surikat/new_app.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surikat/routes.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surikat/scaffold.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surikat/session.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surikat/session_manager.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/.rspec.tmpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/.standalone_migrations.tmpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/Gemfile.tmpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/Rakefile.tmpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/aaa_queries.rb.tmpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/aaa_spec.rb.tmpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/application.yml.tmpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/base_aaa_model.rb.tmpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/base_model.rb.tmpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/base_spec.rb.tmpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/config.ru.tmpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/console.tmpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/crud_queries.rb.tmpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/database.yml.tmpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/hello_queries.rb.tmpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/hello_spec.rb.tmpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/routes.yml.tmpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/spec_helper.rb.tmpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surikat/templates/test_helper.rb.tmpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surikat/types.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surikat/version.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surikat/yaml_configurator.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spec/spec_helper.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spec/surikat_spec.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/surikat.gemspec" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="TODO" pinned="true" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TODO">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="6171">
+                <caret line="363" column="18" selection-start-line="363" selection-start-column="18" selection-end-line="363" selection-end-column="18" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="surikat.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/surikat.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="473">
+              <caret line="282" lean-forward="true" selection-start-line="282" selection-end-line="282" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Ruby Module Template" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>YamlCon</find>
+      <find>surikat_sess</find>
+      <find>@@opt</find>
+      <find>base_que</find>
+      <find>BaseType</find>
+      <find>session_manag</find>
+      <find>database.</find>
+      <find>yaml_config</find>
+      <find>.config</find>
+      <find>surikat_ses</find>
+      <find>app:</find>
+      <find>columns_new_</find>
+      <find>columns_new</find>
+      <find>&lt; B</find>
+      <find>this.sess</find>
+      <find>session =</find>
+      <find>['class</find>
+      <find>.send</find>
+      <find>Input</find>
+      <find>Create a mig</find>
+      <find>'fields'</find>
+      <find>fields|fields|fields</find>
+      <find>.gsub('[</find>
+      <find>BaseModel</find>
+      <find>11</find>
+      <find>error:</find>
+      <find>undersc</find>
+      <find>BASI</find>
+      <find>ARGUMENTS:</find>
+      <find>Redis.n</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>@@routes</replace>
+      <replace>%{class_name_downcase}</replace>
+      <replace>%{class_name_plural}</replace>
+      <replace>%{examples</replace>
+      <replace>@%</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/bin/sk.rb" />
+        <option value="$PROJECT_DIR$/bin/sk" />
+        <option value="$PROJECT_DIR$/exe/sk" />
+        <option value="$PROJECT_DIR$/lib/surikat/templates/console.rb.tmpl" />
+        <option value="$PROJECT_DIR$/lib/surikat/templates/routes.json.tmpl" />
+        <option value="$PROJECT_DIR$/lib/surikat/templates/Rakefile.tmpl" />
+        <option value="$PROJECT_DIR$/lib/surikat/templates/.standalone_migrations.tmpl" />
+        <option value="$PROJECT_DIR$/lib/surikat/main.rb" />
+        <option value="$PROJECT_DIR$/lib/surikat/templates/.rspec.tmpl" />
+        <option value="$PROJECT_DIR$/lib/surikat/templates/spec_helper.rb.tmpl" />
+        <option value="$PROJECT_DIR$/surikat.gemspec" />
+        <option value="$PROJECT_DIR$/lib/surikat/templates/Gemfile.tmpl" />
+        <option value="$PROJECT_DIR$/bin/console" />
+        <option value="$PROJECT_DIR$/lib/surikat/templates/base_aaa_model.rb" />
+        <option value="$PROJECT_DIR$/lib/surikat/templates/aaa.yml.tmpl" />
+        <option value="$PROJECT_DIR$/lib/surikat/templates/aaa.rb.tmpl" />
+        <option value="$PROJECT_DIR$/lib/surikat_session.rb" />
+        <option value="$PROJECT_DIR$/lib/surikat/base_query.rb" />
+        <option value="$PROJECT_DIR$/lib/surikat/base_queries.rb" />
+        <option value="$PROJECT_DIR$/lib/surikat/base_model.rb" />
+        <option value="$PROJECT_DIR$/lib/surikat/configurations.rb" />
+        <option value="$PROJECT_DIR$/lib/surikat/routes.rb" />
+        <option value="$PROJECT_DIR$/lib/surikat/types.rb" />
+        <option value="$PROJECT_DIR$/lib/surikat/yaml_configurator.rb" />
+        <option value="$PROJECT_DIR$/lib/surikat/templates/aaa_queries.rb.tmpl" />
+        <option value="$PROJECT_DIR$/lib/surikat/templates/aaa_spec.rb.tmpl" />
+        <option value="$PROJECT_DIR$/lib/surikat/templates/base_aaa_model.rb.tmpl" />
+        <option value="$PROJECT_DIR$/lib/surikat/templates/base_model.rb.tmpl" />
+        <option value="$PROJECT_DIR$/lib/surikat/templates/console.tmpl" />
+        <option value="$PROJECT_DIR$/lib/surikat/templates/hello_queries.rb.tmpl" />
+        <option value="$PROJECT_DIR$/lib/surikat/templates/hello_spec.rb.tmpl" />
+        <option value="$PROJECT_DIR$/lib/surikat/templates/routes.yml.tmpl" />
+        <option value="$PROJECT_DIR$/lib/surikat/templates/application.yml.tmpl" />
+        <option value="$PROJECT_DIR$/lib/surikat/session.rb" />
+        <option value="$PROJECT_DIR$/lib/surikat/session_manager.rb" />
+        <option value="$PROJECT_DIR$/lib/surikat/scaffold.rb" />
+        <option value="$PROJECT_DIR$/lib/surikat/new_app.rb" />
+        <option value="$PROJECT_DIR$/lib/surikat/templates/test_helper.rb.tmpl" />
+        <option value="$PROJECT_DIR$/lib/surikat/templates/base_spec.rb.tmpl" />
+        <option value="$PROJECT_DIR$/lib/surikat/templates/crud_queries.rb.tmpl" />
+        <option value="$PROJECT_DIR$/exe/surikat" />
+        <option value="$PROJECT_DIR$/lib/surikat.rb" />
+        <option value="$PROJECT_DIR$/lib/surikat/templates/database.yml.tmpl" />
+        <option value="$PROJECT_DIR$/lib/surikat/templates/config.ru.tmpl" />
+        <option value="$PROJECT_DIR$/TODO" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/lib/surikat/version.rb" />
+        <option value="$PROJECT_DIR$/README.md" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="3" />
+    <option name="y" value="23" />
+    <option name="width" value="1889" />
+    <option name="height" value="1057" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <autoscrollFromSource ProjectPane="true" />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="surikat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="surikat" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="surikat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="surikat" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="surikat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="surikat" type="462c0819:PsiDirectoryNode" />
+              <item name="exe" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="surikat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="surikat" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="surikat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="surikat" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="surikat" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="surikat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="surikat" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="surikat" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
   <component name="PropertiesComponent">
+    <property name="RakeTaksPopup.undocumentedIncluded" value="false" />
+    <property name="SearchEverywhereHistoryKey" value="highlight&#9;ACTION&#9;HighlightUsagesInFile&#10;diagram&#9;ACTION&#9;ShowUmlDiagram&#10;list&#9;null&#9;null&#10;list_ty&#9;FILE&#9;file:///Users/alxx/.rvm/gems/ruby-2.4.1/gems/graphql-1.7.7/lib/graphql/list_type.rb&#10;generate_t&#9;null&#9;null&#10;generate_aaa&#9;null&#9;null&#10;exempl&#9;null&#9;null&#10;scaf&#9;FILE&#9;file:///Users/alxx/Projects/surikat/lib/surikat/scaffold.rb&#10;new_a&#9;FILE&#9;file:///Users/alxx/Projects/surikat/lib/surikat/new_app.rb&#10;scaff&#9;FILE&#9;file:///Users/alxx/Projects/surikat/lib/surikat/scaffold.rb" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.ruby.settings.RubyActiveModuleSdkConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/exe" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/bin" />
+      <recent name="$PROJECT_DIR$/lib/surikat" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="66400b9f-bfb7-48ab-a1ab-331b1d21e8c6" name="Default" comment="" />
+      <created>1525803134139</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1525803134139</updated>
+      <workItem from="1525803135369" duration="9974000" />
+      <workItem from="1526060821929" duration="13473000" />
+      <workItem from="1526473553950" duration="20600000" />
+      <workItem from="1527061061177" duration="45000" />
+      <workItem from="1527080050867" duration="68864000" />
+      <workItem from="1527681663233" duration="6990000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="119946000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="3" y="23" width="1889" height="1057" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32977587" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32977587" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="right" id="Mongo Explorer" order="3" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49306297" visible="true" weight="0.2512182" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32977587" />
+      <window_info id="Structure" order="1" sideWeight="0.506937" side_tool="true" visible="true" weight="0.2512182" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.32977587" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="3" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/surikat.gemspec">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="49" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/types.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="52" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/main.rb" />
+    <entry file="file://$PROJECT_DIR$/TODO">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/main.rb" />
+    <entry file="file://$PROJECT_DIR$/bin/console">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/templates/aaa.yml.tmpl" />
+    <entry file="file://$PROJECT_DIR$/lib/surikat/templates/aaa.rb.tmpl" />
+    <entry file="file://$PROJECT_DIR$/lib/surikat_session.rb" />
+    <entry file="file://$PROJECT_DIR$/lib/surikat/base_queries.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/base_type.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/configurations.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/base_model.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/templates/routes.json.tmpl" />
+    <entry file="file://$PROJECT_DIR$/lib/surikat/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="62" column="67" selection-start-line="62" selection-start-column="67" selection-end-line="62" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/yaml_configurator.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="51" lean-forward="true" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/templates/.rspec.tmpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/templates/.standalone_migrations.tmpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/templates/aaa_queries.rb.tmpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/templates/aaa_spec.rb.tmpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2550">
+          <caret line="150" column="3" selection-start-line="150" selection-start-column="3" selection-end-line="150" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/templates/console.tmpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="19" lean-forward="true" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/templates/Gemfile.tmpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/templates/hello_queries.rb.tmpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="100" selection-start-line="3" selection-start-column="100" selection-end-line="3" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/templates/Rakefile.tmpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/templates/spec_helper.rb.tmpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/templates/routes.yml.tmpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/templates/application.yml.tmpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/maculatura/lib2/app/queries/hello_queries.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/templates/base_aaa_model.rb.tmpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/templates/base_model.rb.tmpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/templates/hello_spec.rb.tmpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="58" selection-start-line="34" selection-start-column="58" selection-end-line="34" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/session_manager.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="57" column="26" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/session.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="7" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/types.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" column="64" selection-start-line="41" selection-start-column="64" selection-end-line="41" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.4.1/gems/graphql-1.7.7/lib/graphql/list_type.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="uml://GemDependency/#surikat">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>GemDependency</ID>
+          <OriginalElement>#surikat</OriginalElement>
+          <nodes>
+            <node x="" y="">rspec-expectations</node>
+            <node x="" y="">diff-lcs</node>
+            <node x="" y="">rake</node>
+            <node x="" y="">rails-html-sanitizer</node>
+            <node x="" y="">ransack</node>
+            <node x="" y="">slop</node>
+            <node x="" y="">tzinfo</node>
+            <node x="" y="">loofah</node>
+            <node x="" y="">i18n</node>
+            <node x="" y="">arel</node>
+            <node x="" y="">mini_portile2</node>
+            <node x="" y="">rspec-support</node>
+            <node x="" y="">coderay</node>
+            <node x="" y="">bundler</node>
+            <node x="" y="">nokogiri</node>
+            <node x="" y="">rspec-mocks</node>
+            <node x="" y="">rack</node>
+            <node x="" y="">crass</node>
+            <node x="" y="">builder</node>
+            <node x="" y="">standalone_migrations</node>
+            <node x="" y="">graphql</node>
+            <node x="" y="">activemodel</node>
+            <node x="" y="">concurrent-ruby</node>
+            <node x="" y="">rspec-core</node>
+            <node x="" y="">rails-dom-testing</node>
+            <node x="" y="">#surikat</node>
+            <node x="" y="">pry</node>
+            <node x="" y="">thor</node>
+            <node x="" y="">polyamorous</node>
+            <node x="" y="">thread_safe</node>
+            <node x="" y="">rack-test</node>
+            <node x="" y="">graphql-libgraphqlparser</node>
+            <node x="" y="">activesupport</node>
+            <node x="" y="">railties</node>
+            <node x="" y="">actionpack</node>
+            <node x="" y="">erubi</node>
+            <node x="" y="">minitest</node>
+            <node x="" y="">activerecord</node>
+            <node x="" y="">actionview</node>
+            <node x="" y="">oj</node>
+            <node x="" y="">method_source</node>
+            <node x="" y="">rspec</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.9980380842469705" x="1123.0" y="366.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/surikat.gemspec">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/new_app.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="93" column="62" selection-start-line="93" selection-start-column="62" selection-end-line="93" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/templates/test_helper.rb.tmpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/templates/base_spec.rb.tmpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="45" column="41" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/templates/crud_queries.rb.tmpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="101" column="8" selection-start-line="101" selection-start-column="8" selection-end-line="101" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/scaffold.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="149" column="84" lean-forward="true" selection-start-line="149" selection-start-column="25" selection-end-line="149" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exe/surikat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="791">
+          <caret line="149" column="28" selection-start-line="149" selection-start-column="28" selection-end-line="149" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/templates/database.yml.tmpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TODO">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/version.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/templates/config.ru.tmpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="19" column="51" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="282" lean-forward="true" selection-start-line="282" selection-end-line="282" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="6171">
+            <caret line="363" column="18" selection-start-line="363" selection-start-column="18" selection-end-line="363" selection-end-column="18" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

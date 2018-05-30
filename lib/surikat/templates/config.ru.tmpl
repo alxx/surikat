@@ -1,0 +1,61 @@
+require 'rack/app'
+require 'oj'
+require 'surikat'
+
+Dir.glob('./config/initializers/*.rb').sort.each do |file|
+  require file
+end
+
+class %{app_name_capitalized} < Rack::App
+
+  get '/' do
+    app
+  end
+
+  post '/' do
+    app
+  end
+
+  def app
+    ActiveRecord::Base.logger = Logger.new(STDOUT) unless ENV['RACK_ENV'] == 'production'
+
+    session_key = request.env['HTTP_SURIKAT']
+
+    # first, try to parse it as JSON
+    json_payload = Oj.load(payload) rescue nil
+
+    if json_payload
+      query, variables = json_payload['query'], json_payload['variables']
+    else # then, as parameters, either GET
+      if query = params['query']
+        variables = params['variables']
+      else # or POST
+        split_payload, query, variables = payload.split('&'), nil, nil
+        split_payload.to_a.each do |line|
+          split_line  = line.split('=')
+          name, value = split_line.to_a[0], split_line.to_a[1, 1000].join('=')
+
+          query       = CGI::unescape(value) if name == 'query'
+          variables   = CGI::unescape(value) if name == 'variables'
+        end
+
+        variables = Oj.load(variables) if !variables.to_s.empty?
+      end
+    end
+
+    if query.to_s.strip.empty?
+      result = {'error' => 'Empty query'}
+    else
+      result = begin
+        Surikat::run query, variables, debug: false, session_key: session_key
+      rescue Exception => e
+        puts "Error running query #{query.inspect}: #{e.message}\n#{e.backtrace.join("\n")}"
+        {'error': e.message}
+      end
+    end
+
+    Oj.dump result, mode: :compat
+  end
+end
+
+run %{app_name_capitalized}

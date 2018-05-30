@@ -1,0 +1,148 @@
+require 'test_helper'
+
+describe % {class_name}Queries do
+  context "When testing the %{class_name} queries" do
+
+    before(:all) do
+      %{class_name}.destroy_all
+      @%{model_name} = %{class_name}.create_random
+      @more_%{model_name_plural} = (1..10).to_a.map {%{class_name}.create_random}
+
+      @expected_fields = [ %{columns_space} ]
+    end
+
+    describe "#queries" do
+
+      it "should retrieve an instance of %{class_name}" do
+        query    = "
+        { %{class_name}(id: #{@%{model_name}.id}) {
+           #{@expected_fields.join("\n")}
+          }
+        }"
+        response = Surikat::run query, {}
+
+        expected = {
+            "%{class_name}" => dates2string(@%{model_name}.attributes.slice(*@expected_fields))
+        }
+
+        expect(response).to eq expected
+      end
+
+      [ %{columns_space} ].each do |col|
+        it "should retrieve the #{col} of an instance of %{class_name}" do
+          query    = "
+        { %{class_name}(id: #{@%{model_name}.id}) {
+           #{col}
+          }
+        }"
+          response = Surikat::run query, {}
+
+          expected = {
+              "%{class_name}" => dates2string({
+                  col => @%{model_name}.send(col)
+              })
+          }
+
+          expect(response).to eq expected
+        end
+      end
+
+      it "should retrieve all instances of %{class_name}" do
+        query    = "
+        { %{class_name_plural}(q: \"id_lt=10000\") {
+            #{@expected_fields.join("\n")}
+          }
+        }"
+        response = Surikat::run query, {}
+
+        expected = {
+            "%{class_name_plural}" => ([ @%{model_name}] + @more_%{model_name_plural}).map {|r| dates2string(r.attributes.slice(*@expected_fields))}
+        }
+
+        expect(response).to eq expected
+      end
+
+    end
+
+  end
+
+  context "When testing the %{class_name} mutations" do
+
+    before(:all) do
+      Author.destroy_all
+
+      @expected_fields = [ %{columns_space} ]
+    end
+
+    describe "#mutations" do
+
+      it "should create an instance of %{class_name}" do
+        query = "
+          mutation %{class_name}($%{model_name}: %{class_name}Input) {
+            %{class_name}(%{model_name}: $%{model_name}) {
+               #{@expected_fields.join("\n")}
+            }
+          }
+         "
+
+        variables = {'%{model_name}' => %{class_name}.random_params}
+
+        response = Surikat::run query, variables
+
+        expect(response).to be_instance_of Hash
+        expect(response['%{class_name}']).to include variables['%{model_name}'].slice(*@expected_fields)
+      end
+
+      it "should update an instance of %{class_name}" do
+        %{model_name}_params = %{class_name}.random_params
+        %{model_name} = %{class_name}.create %{model_name}_params
+
+        new_%{model_name}_params = %{class_name}.random_params
+
+        # Step 1: Test that the update operation returns true
+        query = "
+          mutation Update%{class_name}($%{model_name}: %{class_name}Input) {
+            Update%{class_name}(%{model_name}: $%{model_name}) {
+              #{@expected_fields.join("\n")}
+            }
+          }
+        "
+
+        params_plus = new_%{model_name}_params.merge({'id' => %{model_name}.id, 'created_at' => %{model_name}.created_at.to_s, 'updated_at' => %{model_name}.updated_at.to_s})
+
+        variables = {'%{model_name}' => params_plus}
+
+        response = Surikat::run query, variables
+
+        expect(response).to be_instance_of Hash
+        expect(response['Update%{class_name}']).to eq true
+
+        # Step 2: Test that the record has been updated
+        %{model_name}.reload
+        expect(%{model_name}.attributes.slice(*@expected_fields)).to eq params_plus.slice(*@expected_fields)
+      end
+
+      it "should destroy an instance of %{class_name}" do
+        %{model_name} = %{class_name}.create_random
+
+        # Step 1: Test that the destroy operation returns true
+        query = "
+          mutation Delete%{class_name}($id: ID) {
+            Delete%{class_name}(id: $id)
+          }
+        "
+
+        variables = {'id' => %{model_name}.id}
+
+        response = Surikat::run query, variables
+
+        expect(response).to be_instance_of Hash
+        expect(response['Delete%{class_name}']).to eq true
+
+        # Step 2: Test that the object actually doesn't exist
+        expect {%{model_name}.reload}.to raise_error ActiveRecord::RecordNotFound
+      end
+
+    end
+  end
+end

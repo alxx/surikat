@@ -1,12 +1,14 @@
 # This is an internal utility class used to manage the GraphQL types, which are stored in an object dump called 'types.json'.
-# The developers will use this class to CRUD their GraphQL application types. The scaffold generators will also
+# The developers might want to use this class to CRUD their GraphQL application types. The scaffold generators will also
 # use this class for the same purpose.
 class Types
+
+  require 'oj'
 
   BASIC = ['Int', 'Boolean', 'String', 'Float', 'ID']
 
   def initialize
-    @filename = File.expand_path('.',__dir__) + '/../../config/types.json'
+    @filename = "#{FileUtils.pwd}/config/types.yml"
     @types = load
   end
 
@@ -33,11 +35,11 @@ class Types
   private
   def load
     return {} unless File.exists?(@filename)
-    Oj.load File.read(@filename)
+    YAML.load_file @filename
   end
 
   def save
-    File.open(@filename, 'w') { |file| file.write(JSON.pretty_generate(@types))}
+    File.open(@filename, 'w') { |file| file.write(@types.to_yaml)}
   end
 
 end

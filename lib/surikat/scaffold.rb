@@ -2,17 +2,17 @@ module Scaffold
 
   require 'fileutils'
 
-  def generate_routes(model_name)
+  def generate_routes(model_name, is_aaa: false)
     print "Generating query and migration routes... "
 
     routes = Routes.new
 
-    class_name = ActiveSupport::Inflector.singularize(model_name.capitalize)
+    class_name = ActiveSupport::Inflector.camelize(model_name)
 
     begin
       # get one query
       routes.merge_query({class_name => {
-          'module'      => "#{class_name}Queries",
+          'class'       => "#{class_name}Queries",
           'method'      => 'get',
           'output_type' => "#{class_name}",
           'arguments'   => {'id' => 'ID'}
@@ -21,35 +21,99 @@ module Scaffold
       # get all query
       class_name_plural = ActiveSupport::Inflector.pluralize(class_name)
       routes.merge_query({class_name_plural => {
-          'module'      => "#{class_name}Queries",
+          'class'       => "#{class_name}Queries",
           'method'      => 'all',
           'output_type' => "[#{class_name}]",
-          'arguments'   => {}
+          'arguments'   => {'q' => 'String'}
       }})
 
       # create mutation
       routes.merge_mutation({class_name => {
-          'module'      => "#{class_name}Queries",
+          'class'       => "#{class_name}Queries",
           'method'      => 'create',
           'output_type' => "#{class_name}",
-          'arguments'   => {'author' => 'AuthorInput'}
+          'arguments'   => {class_name => "#{class_name}Input"}
       }})
 
       # update mutation
       routes.merge_mutation({"Update#{class_name}" => {
-          'module'      => "#{class_name}Queries",
+          'class'       => "#{class_name}Queries",
           'method'      => 'update',
           'output_type' => "Boolean",
-          'arguments'   => {'author' => 'AuthorInput'}
+          'arguments'   => {class_name => "#{class_name}Input"}
       }})
 
       # delete mutation
       routes.merge_mutation({"Delete#{class_name}" => {
-          'module'      => "#{class_name}Queries",
+          'class'       => "#{class_name}Queries",
           'method'      => 'delete',
           'output_type' => "Boolean",
           'arguments'   => {'id' => 'ID'}
       }})
+
+      if is_aaa # add extra routes for AAA
+        routes.merge_query({'Authenticate' => {
+            "class"       => "AAAQueries",
+            "method"      => "authenticate",
+            "output_type" => "Boolean",
+            "arguments"   => {
+                "email"    => "String",
+                "password" => "String"
+            }
+        }})
+
+        routes.merge_query({'Logout' => {
+            "class"           => "AAAQueries",
+            "method"          => "logout",
+            "output_type"     => "Boolean",
+            "permitted_roles" => "any"
+        }})
+
+        routes.merge_query({'CurrentUser' => {
+            "class"           => "AAAQueries",
+            "method"          => "current_user",
+            "output_type"     => "User",
+            "permitted_roles" => "any"
+        }})
+
+        routes.merge_query({'LoginAs' => {
+            "class"           => "AAAQueries",
+            "method"          => "login_as",
+            "output_type"     => "Boolean",
+            "permitted_roles" => ["superadmin"],
+            "arguments"       => {
+                "user_id" => "ID"
+            }
+        }})
+
+        routes.merge_query({'BackFromLoginAs' => {
+            "class"           => "AAAQueries",
+            "method"          => "back_from_login_as",
+            "output_type"     => "Boolean",
+            "permitted_roles" => "any"
+        }})
+
+        routes.merge_query({'DemoOne' => {
+            "class"           => "AAAQueries",
+            "method"          => "demo_one",
+            "output_type"     => "String",
+            "permitted_roles" => "any"
+        }})
+
+        routes.merge_query({'DemoTwo' => {
+            "class"           => "AAAQueries",
+            "method"          => "demo_two",
+            "output_type"     => "String",
+            "permitted_roles" => ["hotdog", "hamburger"]
+        }})
+
+        routes.merge_query({'DemoThree' => {
+            "class"           => "AAAQueries",
+            "method"          => "demo_three",
+            "output_type"     => "String",
+            "permitted_roles" => ["worker"]
+        }})
+      end # if is_aaa
     rescue Exception => e
       puts "fail: #{e.message}, #{e.backtrace.first}"
       false
@@ -60,7 +124,7 @@ module Scaffold
   end
 
   def destroy_routes(model_name)
-    class_name        = ActiveSupport::Inflector.singularize(model_name.capitalize)
+    class_name        = ActiveSupport::Inflector.camelize(model_name)
     class_name_plural = ActiveSupport::Inflector.pluralize(class_name)
 
     routes = Routes.new
@@ -83,12 +147,12 @@ module Scaffold
   end
 
   def generate_queries(model_name)
-    var_name           = ActiveSupport::Inflector.singularize(model_name.downcase)
-    class_name         = ActiveSupport::Inflector.singularize(model_name.capitalize)
+    var_name           = ActiveSupport::Inflector.singularize(model_name.underscore)
+    class_name         = ActiveSupport::Inflector.camelize(model_name)
     class_name_plural  = ActiveSupport::Inflector.pluralize(class_name)
-    file_name          = ActiveSupport::Inflector.singularize(model_name.downcase) + '_queries.rb'
+    file_name          = ActiveSupport::Inflector.singularize(model_name.underscore) + '_queries.rb'
     file_path          = "queries/#{file_name}"
-    absolute_path      = File.expand_path('.', __dir__) + '/../../'
+    absolute_path      = FileUtils.pwd + '/app/'
     file_absolute_path = absolute_path + file_path
 
     FileUtils.mkdir_p absolute_path + 'models'
@@ -115,7 +179,7 @@ module Scaffold
 
     examples = {
         get:    "{\n  #{class_name}(id: 123) {\n" + fields.map {|f| "    #{f}"}.join("\n") + "\n  }\n}",
-        list:   "{\n  #{class_name_plural} {\n" + fields.map {|f| "    #{f}"}.join("\n") + "\n  }\n}",
+        list:   "{\n  #{class_name_plural}(q: \"id_lt=100\") {\n" + fields.map {|f| "    #{f}"}.join("\n") + "\n  }\n}",
         create: "mutation #{class_name}($#{var_name}: #{class_name}Input) {\n  #{class_name}(#{var_name}: $#{var_name}) {\n" + fields.map {|f| "    #{f}"}.join("\n") + "\n  }\n}",
         update: "mutation Update#{class_name}($#{var_name}: #{class_name}Input) {\n  Update#{class_name}(#{var_name}: $#{var_name}) {\n" + fields.map {|f| "    #{f}"}.join("\n") + "\n  }\n}",
         delete: "mutation Delete#{class_name}($id: ID) {\n  Delete#{class_name}(id: $id)\n}"
@@ -128,133 +192,61 @@ module Scaffold
     all_types["#{class_name}Input"]['arguments'].each {|a, t| create_vars[var_name][a] = random_values(t)}
     create_vars[var_name].delete 'id'
 
-    template = <<EOT
-=begin
-This module was generated by the scaffold generator.
-It contains methods to get, list, create, update and delete instances of #{class_name}.
-Default routes are created for each of this method (use '#{$0} list routes' or look inside config/routes.json to see them).
-Example queries/mutations can be found in the comments for each method.
-Generated at:: #{Time.now.to_s}
-=end
-module Queries
+    vars = {
+        examples:                  examples,
+        time:                      Time.now.to_s,
+        class_name_downcase:       class_name.underscore,
+        class_name:                class_name,
+        class_name_plural:         class_name_plural,
+        input_type_detailed:       input_type_detailed,
+        pretty_update_vars:        JSON.pretty_generate(update_vars),
+        pretty_create_vars:        JSON.pretty_generate(create_vars),
+        pretty_random_id:          JSON.pretty_generate({'id' => random_values('ID')}),
+        input_type_detailed_no_id: input_type_detailed_no_id,
+        examples_get:              examples[:get],
+        examples_list:             examples[:list],
+        examples_create:           examples[:create],
+        examples_update:           examples[:update],
+        examples_delete:           examples[:delete]
+    }
 
-  require File.expand_path('.',__dir__) + '/../models/#{class_name.downcase}'
+    copy_template 'crud_queries.rb', {new_name: file_name, path: 'app/queries', vars: vars}
 
-  module #{class_name}Queries
-
-=begin
-Description: Retrieve one #{class_name} instance by its id
-Query Name: #{class_name}
-
-Input: { 'id' => ID }
-
-Output Type: #{class_name}
-
-Query Example:
-#{examples[:get]}
-=end
-    def self.get(arguments)
-      #{class_name}.where(id: arguments['id'])
-    end
-
-=begin
-Description: Retrieve all #{class_name} instances
-Query Name: #{class_name_plural}
-
-Input: none
-
-Output Type: [#{class_name}]
-
-Query Example:
-#{examples[:list]}
-=end
-    def self.all(_arguments)
-      #{class_name}.all
-    end
-
-=begin
-Description: Create an instance of #{class_name} and return it; this is a mutation.
-Mutation Name: #{class_name}
-
-Input: { '#{class_name}' => {
-#{input_type_detailed_no_id}
-  }
-}
-
-Output Type: #{class_name}
-
-Query Example:
-#{examples[:create]}
-
-Example Variables:
-#{JSON.pretty_generate create_vars}
-=end
-    def self.create(arguments)
-      #{class_name}.create arguments['#{class_name.downcase}']
-    end
-
-=begin
-Description: Update an instance of #{class_name}; this is a mutation.
-Query Name: Update#{class_name}
-
-Input: { '#{class_name}' => {
-#{input_type_detailed}
-  }
-}
-
-Output Type: Boolean
-
-Query Example:
-#{examples[:update]}
-
-Example Variables:
-#{JSON.pretty_generate update_vars}
-=end
-    def self.update(arguments)
-      #{class_name}.find(arguments['#{class_name.downcase}']['id']).update(arguments['#{class_name.downcase}'].without('id'))
-    end
-
-=begin
-Description: Delete an instance of #{class_name}.
-Query Name: Delete#{class_name}
-
-Input: { 'id' => ID }
-
-OutputType: Boolean
-
-Query Example:
-#{examples[:delete]}
-
-Example Variables:
-#{JSON.pretty_generate({ 'id' => random_values('ID')}) }
-=end
-    def self.delete(arguments)
-      #{class_name}.where(id: arguments['id']).destroy_all
-    end
-
+    puts "ok"
+    true
   end
-end
-EOT
 
-    begin
-      File.open(file_absolute_path, 'w') {|f| f.write template}
-    rescue Exception => e
-      puts "fail: #{e.message}, #{e.backtrace.first}"
-      false
-    else
-      puts "ok"
-      true
+  def generate_aaa_queries
+    file_name          = 'aaa_queries.rb'
+    file_path          = "app/queries/#{file_name}"
+    absolute_path      = FileUtils.pwd + '/app/queries/'
+    file_absolute_path = absolute_path + file_path
+
+    vars = {
+        time: Time.now.to_s
+    }
+
+    print "Creating AAA queries file: #{file_name}... "
+
+    if File.exists?(file_absolute_path)
+      puts "exists"
+      return true
     end
+
+    copy_template file_name, {path: 'app/queries', vars: vars}
+
+    puts "ok"
+    true
   end
 
   def destroy_queries(model_name)
-    file_name = ActiveSupport::Inflector.singularize(model_name.downcase) + '_queries.rb'
+    file_name = ActiveSupport::Inflector.singularize(model_name.underscore) + '_queries.rb'
     file_path = "queries/#{file_name}"
 
     print "Deleting queries file: #{file_path}... "
 
     begin
-      File.unlink File.expand_path('.', __dir__) + '/../../' + file_path
+      File.unlink FileUtils.pwd + '/app/' + file_path
     rescue Exception => e
       puts "fail: #{e.message}"
       false
@@ -264,15 +256,17 @@ EOT
     end
   end
 
-  def generate_types(model_name, arguments)
-    type_name = ActiveSupport::Inflector.singularize(model_name.capitalize)
+  def generate_types(model_name, arguments, is_aaa: false)
+    type_name = ActiveSupport::Inflector.camelize(model_name)
     types     = Types.new
 
     fields = {}
     (arguments + ['id:ID']).each do |arg|
       field_name, field_type = arg.split(':').map(&:strip)
 
-      field_type = 'ID' if field_name[-3,3] == '_id'
+      next if field_name.in?(%w(password hashed_password)) && is_aaa # never expose the hashed password
+
+      field_type = 'ID' if field_name[-3, 3] == '_id'
 
       graphql_type = case field_type
                      when 'ID'
@@ -299,9 +293,8 @@ EOT
     else
       begin
         types.merge type_name => {
-            'class'  => type_name,
             'type'   => 'Output',
-            'fields' => fields
+            'fields' => fields.clone
         }
       rescue Exception => e
         puts "fail: #{e.message}, #{e.backtrace.first}"
@@ -317,11 +310,17 @@ EOT
       puts "exists"
       true
     else
+      input_fields = fields.clone
+
+      if is_aaa
+        input_fields.merge!({'password' => 'String'})
+        input_fields.delete('hashed_password')
+      end
+
       begin
         types.merge "#{type_name}Input" => {
-            'class'     => type_name,
             'type'      => 'Input',
-            'arguments' => fields
+            'arguments' => input_fields
         }
       rescue Exception => e
         puts "fail: #{e.message}, #{e.backtrace.first}"
@@ -337,7 +336,7 @@ EOT
     print "Deleting types... "
 
     begin
-      type_name = ActiveSupport::Inflector.singularize(model_name.capitalize)
+      type_name = ActiveSupport::Inflector.camelize(model_name)
       types     = Types.new
 
       types.delete(type_name)
@@ -351,116 +350,94 @@ EOT
     end
   end
 
-  def create_db_table(model_name, arguments)
-    table_name = ActiveSupport::Inflector.pluralize(model_name.downcase)
+  def make_create_migration(migration_name, arguments)
+    print "Creating migration #{migration_name}... "
 
-    print "Creating table #{table_name}... "
+    arguments << 'created_at:datetime'
+    arguments << 'updated_at:datetime'
 
     begin
-      ActiveRecord::Migration.verbose = false
-      ActiveRecord::Migration.create_table(table_name) do |t|
-        arguments.each do |arg|
-          field_name, field_type = arg.split(':').map(&:strip)
-          t.send(field_type, field_name.to_sym)
-
-          t.datetime :created_at
-          t.datetime :updated_at
-        end
-      end
+      StandaloneMigrations::Generator.migration migration_name, arguments
     rescue Exception => e
-      if e.message =~ /already exists/
-        puts "exists"
-        true
-      else
-        puts "fail: #{e.message}, #{e.backtrace.first}"
-        false
-      end
+      puts " error: #{e.message}"
+      return false
     else
       puts "ok"
       true
     end
   end
 
-  def destroy_db_table(model_name)
-    table_name = ActiveSupport::Inflector.pluralize(model_name.downcase)
-    print "Dropping table #{table_name}... "
-
-    begin
-      ActiveRecord::Migration.verbose = false
-      ActiveRecord::Migration.drop_table(table_name)
-    rescue Exception => e
-      puts "fail: #{e.message}, #{e.backtrace.first}"
-      false
-    else
-      puts "ok"
-      true
-    end
-  end
-
-  def generate_model(model_name, arguments)
-    return false unless create_db_table(model_name, arguments)
-
-    class_name         = ActiveSupport::Inflector.singularize(model_name.capitalize)
-    file_name          = ActiveSupport::Inflector.singularize(model_name.downcase) + '.rb'
+  def generate_model(model_name, arguments, is_aaa: false)
+    class_name         = ActiveSupport::Inflector.camelize(model_name)
+    file_name          = ActiveSupport::Inflector.singularize(model_name.underscore) + '.rb'
     file_path          = "models/#{file_name}"
-    absolute_path      = File.expand_path('.', __dir__) + '/../../'
+    absolute_path      = FileUtils.pwd + '/app/'
     file_absolute_path = absolute_path + file_path
+
+    return false unless make_create_migration("create_#{model_name}", arguments)
 
     FileUtils.mkdir_p absolute_path + 'models'
 
-    print "Creating model file: #{file_path}... "
+    print "Creating model file: #{file_name}... "
 
     if File.exists?(file_absolute_path)
       puts "exists"
       return true
     end
 
-    template = <<EOT
-require File.expand_path('.',__dir__) + '/../gemlib/lib/base_model'
-require File.expand_path('.',__dir__) + '/../gemlib/lib/base_type'
+    template = is_aaa ? 'base_aaa_model.rb' : 'base_model.rb'
 
-# This model class was generated automatically.
-class #{class_name} < BaseModel 
+    copy_template template, {new_name: file_name, path: 'app/models', vars: {class_name: class_name}}
 
-  # Add your own validation rules, instance methods, relationships etc.
-
-end
-EOT
-
-    begin
-      File.open(file_absolute_path, 'w') {|f| f.write template}
-    rescue Exception => e
-      puts "fail: #{e.message}, #{e.backtrace.first}"
-      false
-    else
-      puts "ok"
-      true
-    end
+    puts "ok"
+    return true
   end
 
-  def destroy_model(model_name)
-    return false unless destroy_db_table(model_name)
+  def generate_tests(model_name, arguments, is_aaa: false)
 
-    file_name = ActiveSupport::Inflector.singularize(model_name.downcase) + '.rb'
-    file_path = "models/#{file_name}"
+    class_name         = ActiveSupport::Inflector.camelize(model_name)
+    class_name_plural  = ActiveSupport::Inflector.pluralize(class_name)
+    model_name_plural  = ActiveSupport::Inflector.pluralize(model_name.underscore)
+    file_name          = ActiveSupport::Inflector.singularize(model_name.underscore) + '_spec.rb'
+    file_path          = "spec/#{file_name}"
+    absolute_path      = FileUtils.pwd + '/app/'
+    file_absolute_path = absolute_path + file_path
+    columns            = (arguments.to_a.map {|a| a.split(':').first} + %w(id created_at updated_at)).uniq
 
-    print "Deleting model file: #{file_path}... "
+    columns            -= ['hashed_password'] if is_aaa
 
-    begin
-      File.unlink File.expand_path('.', __dir__) + '/../../' + file_path
-    rescue Exception => e
-      puts "fail: #{e.message}, #{e.backtrace.first}"
-      false
-    else
-      puts "ok"
-      true
+    print "Creating rspec tests: #{file_name}... "
+
+    if File.exists?(file_absolute_path)
+      puts "exists"
+      return true
     end
+
+    copy_template 'base_spec.rb', {
+        new_name: file_name,
+        path:     'spec',
+        vars:     {class_name:       class_name, class_name_plural: class_name_plural,
+                   model_name:       model_name.underscore, model_name_plural: model_name_plural,
+                   columns_new_line: columns.join("\n           "),
+                   columns_space:    columns.map {|c| "'#{c}'"}.join(', ')
+        }
+    }
+
+    puts "ok"
+
+    if is_aaa
+      print "Creating AAA rspec tests: spec/aaa_spec.rb... "
+      copy_template 'aaa_spec.rb', {path: 'spec'}
+      puts "ok"
+    end
+
+    true
   end
 
   def generate_scaffold arguments
     model_name = arguments.shift
     if model_name.to_s.empty?
-      puts "Syntax: #{$0} generate scaffold model_name field1:type1 field2:type2..."
+      puts "Syntax: surikat generate scaffold model_name field1:type1 field2:type2..."
       return
     end
 
@@ -485,29 +462,41 @@ EOT
     if generate_model(model_name, arguments) &&
         generate_types(model_name, arguments) &&
         generate_queries(model_name) &&
-        generate_routes(model_name)
+        generate_routes(model_name) &&
+        generate_tests(model_name, arguments)
       puts "Done."
     else
-      destroy_model(model_name)
-      destroy_types(model_name)
-      destroy_queries(model_name)
-      destroy_routes(model_name)
+      puts "Partially done."
     end
 
   end
 
-  def destroy_scaffold model_name
-    if model_name.to_s.empty?
-      puts "Syntax: #{$0} generate scaffold model_name field1:type1 field2:type2..."
-      return
+  def generate_aaa
+    model_name = 'user'
+    arguments  = ['email:string', 'hashed_password:string', 'roleids:string']
+
+    if generate_model(model_name, arguments, is_aaa: true) &&
+        generate_types(model_name, arguments, is_aaa: true) &&
+        generate_queries(model_name) &&
+        generate_aaa_queries &&
+        generate_routes(model_name, is_aaa: true)
+      generate_tests(model_name, arguments, is_aaa: true)
+
+      puts "Done."
+    else
+      puts "Partially done."
     end
+  end
 
-    destroy_model(model_name)
-    destroy_types(model_name)
-    destroy_queries(model_name)
-    destroy_routes(model_name)
+  def copy_template name, details
+    destination_path = details[:path]
+    vars             = details[:vars] || {}
+    file             = "#{__dir__}/templates/#{name}.tmpl"
+    dest             = "#{destination_path}/#{details[:new_name] || name}"
 
-    true
+    text = File.open(file).read
+
+    File.open(dest, 'w') {|f| f.write(text % vars)}
   end
 
 

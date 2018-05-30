@@ -1,0 +1,31 @@
+source 'https://rubygems.org'
+
+# This is a rack app
+gem 'rack-app'
+
+# ActiveRecord is used as a database layer
+gem 'activerecord'
+
+# ActiveSupport for various duties
+gem 'activesupport'
+
+# Surikat is the engine of the app
+gem 'surikat'
+
+# The web server
+gem 'passenger', ">= 5.0.25", require: "phusion_passenger/rack_handler"
+
+# The GraphQL parser
+gem 'graphql-libgraphqlparser', ">= 1.2.0"
+
+# A faster JSON parser
+gem 'oj'
+
+# The initial database is SQLite
+gem 'sqlite3'
+
+# Database migrations for both schema and data
+gem 'standalone_migrations'
+
+# Filtering
+gem 'ransack', ">= 1.8.8"

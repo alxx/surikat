@@ -1,0 +1,19 @@
+# This is a generated file.
+# To test these queries, run 'rspec -f d spec/hello_spec.rb'
+# To see example queries for them, use 'surikat exemplify HelloQueries hello'
+# If you want to throw away this file, please remember to also delete the relevant routes and tests.
+class HelloQueries < Surikat::BaseQueries
+  def hello
+    'world'
+  end
+
+  def show_session
+    session.to_h.inspect
+  end
+
+  def add_session
+    key, val = "key_#{SecureRandom.hex(3)}", SecureRandom.hex(5)
+    session[key] = val
+    "#{key},#{val}"
+  end
+end

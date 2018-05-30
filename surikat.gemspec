@@ -7,10 +7,10 @@ Gem::Specification.new do |spec|
   spec.name          = "surikat"
   spec.version       = Surikat::VERSION
   spec.authors       = ["Alex Deva"]
-  spec.email         = ["alxx@indigenious.ro"]
+  spec.email         = ["alxx@indiro.se"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
+  spec.summary       = %q{An API-only, GraphQL centric web framework.}
+  spec.description   = %q{Surikat is a web framework that revolves around GraphQL, offering a lot of ready-made functionality such as CRUD operations, automatic query generation, authentication and performance optimisations.}
   spec.homepage      = "TODO: Put your gem's website or public repo URL here."
   spec.license       = "MIT"
 
@@ -31,6 +31,15 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.15"
-  spec.add_development_dependency "rake", "~> 10.0"
+  #spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "pry", "~> 0.10"
+
+  spec.add_development_dependency "activesupport", "~> 5.2", ">= 5.2.0"
+  spec.add_development_dependency "graphql-libgraphqlparser", "~> 1.2", ">= 1.2.0"
+  spec.add_development_dependency "oj", "~> 3.3", ">= 3.3.5"
+  spec.add_development_dependency "standalone_migrations", "~> 5.2", ">= 5.2.5"
+#  spec.add_development_dependency "ransack", "~> 1.8", ">= 1.8.2"
+
+
 end

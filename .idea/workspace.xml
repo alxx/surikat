@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="66400b9f-bfb7-48ab-a1ab-331b1d21e8c6" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/surikat.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/surikat.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/surikat.gemspec" beforeDir="false" afterPath="$PROJECT_DIR$/surikat.gemspec" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -54,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="surikat.gemspec" pinned="false" current-in-tab="false">
+      <file leaf-file-name="surikat.gemspec" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/surikat.gemspec">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="54" column="50" selection-start-line="54" selection-start-column="50" selection-end-line="54" selection-end-column="50" />
+            <state relative-caret-position="578">
+              <caret line="39" column="2" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -66,17 +65,17 @@
       <file leaf-file-name="version.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/surikat/version.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="17">
+              <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="surikat.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="surikat.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/surikat.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="65" column="56" selection-start-line="65" selection-start-column="56" selection-end-line="65" selection-end-column="56" />
+            <state relative-caret-position="381">
+              <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
               <folding>
                 <element signature="e#2343#9042#0" />
                 <element signature="e#9048#9302#0" />
@@ -187,17 +186,17 @@
         <option value="$PROJECT_DIR$/lib/surikat/templates/database.yml.tmpl" />
         <option value="$PROJECT_DIR$/lib/surikat/templates/config.ru.tmpl" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/surikat.gemspec" />
         <option value="$PROJECT_DIR$/bin/console" />
         <option value="$PROJECT_DIR$/lib/surikat/templates/console.tmpl" />
         <option value="$PROJECT_DIR$/exe/surikat" />
         <option value="$PROJECT_DIR$/lib/surikat/base_model.rb" />
         <option value="$PROJECT_DIR$/lib/surikat/templates/base_spec.rb.tmpl" />
-        <option value="$PROJECT_DIR$/lib/surikat/version.rb" />
         <option value="$PROJECT_DIR$/lib/surikat/session_manager.rb" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/TODO" />
         <option value="$PROJECT_DIR$/lib/surikat.rb" />
+        <option value="$PROJECT_DIR$/lib/surikat/version.rb" />
+        <option value="$PROJECT_DIR$/surikat.gemspec" />
       </list>
     </option>
   </component>
@@ -313,7 +312,7 @@
       <workItem from="1527061061177" duration="45000" />
       <workItem from="1527080050867" duration="68864000" />
       <workItem from="1527681663233" duration="14504000" />
-      <workItem from="1528216280645" duration="1351000" />
+      <workItem from="1528216280645" duration="2039000" />
     </task>
     <task id="LOCAL-00001" summary="no gem">
       <created>1527697580402</created>
@@ -399,11 +398,25 @@
       <option name="project" value="LOCAL" />
       <updated>1527709982180</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="fixed casting of custom types">
+      <created>1528217781986</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1528217781986</updated>
+    </task>
+    <task id="LOCAL-00014" summary="increased version to 0.2.4">
+      <created>1528217824781</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1528217824781</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128811000" />
+    <option name="totallyTimeSpent" value="129499000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -416,7 +429,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="3" y="23" width="1889" height="1057" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32977587" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
@@ -455,7 +467,9 @@
     <MESSAGE value="fixed issues with fresh project" />
     <MESSAGE value="fixed gem dependency issues and a scaffold templating issue" />
     <MESSAGE value="doc fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="doc fix" />
+    <MESSAGE value="fixed casting of custom types" />
+    <MESSAGE value="increased version to 0.2.4" />
+    <option name="LAST_COMMIT_MESSAGE" value="increased version to 0.2.4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1197,20 +1211,6 @@
     <entry file="file://$PROJECT_DIR$/lib/surikat/base_model.rb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/surikat.gemspec">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="54" column="50" selection-start-line="54" selection-start-column="50" selection-end-line="54" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/surikat/version.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/surikat/session_manager.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -1237,13 +1237,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/surikat.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="65" column="56" selection-start-line="65" selection-start-column="56" selection-end-line="65" selection-end-column="56" />
+        <state relative-caret-position="381">
+          <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
           <folding>
             <element signature="e#2343#9042#0" />
             <element signature="e#9048#9302#0" />
             <element signature="e#9308#10900#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/version.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/surikat.gemspec">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="39" column="2" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
         </state>
       </provider>
     </entry>

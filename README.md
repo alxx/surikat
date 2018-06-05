@@ -172,56 +172,56 @@ Example query:
 Sometimes you need to supply for the frontend things that don't come directly from the database.
 In fact, you can send anything you want; here are a few simple recipes:
 
- 1 To add an additional field to the ones already provided by the database, the easiest way 
+ 1. To add an additional field to the ones already provided by the database, the easiest way 
 is to define a method in the model.
 
-```ruby
-class Person < Surikat::BaseModel
-  def favourite_number
-    rand(10)
-  end
-end
-```
+    ```ruby
+    class Person < Surikat::BaseModel
+      def favourite_number
+        rand(10)
+      end
+    end
+    ```
 
-Then, you can add `favourite_number` into the `Author` output type, and you're set.
+    Then, you can add `favourite_number` into the `Author` output type, and you're set.
 
- 2 If you need this field to have arguments:
+ 2. If you need this field to have arguments:
 
-```ruby
-class Person < Surikat::BaseModel
-  def square(num)
-    num * num
-  end
-end
-```
+    ```ruby
+    class Person < Surikat::BaseModel
+      def square(num)
+        num * num
+      end
+    end
+    ```
+    
+    And in the query:
+    
+    ```graphql
+    {
+      Person(id: 1) {
+        square(num: 5)
+      }
+    }
+    ```
 
-And in the query:
-
-```graphql
-{
-  Person(id: 1) {
-    square(num: 5)
-  }
-}
-```
-
- 3 Returning custom types is also easy. If you have an output type that defines the fields
+ 3. Returning custom types is also easy. If you have an output type that defines the fields
 `favourite_food` and `favourite_drink`, all your query needs to do is to return a Ruby `Hash`
 that has those two keys.
 
-```ruby
-class MyQueries < Surikat::BaseQueries
-  def favourite_stuff
-    {
-      favourite_food: 'air',
-      favourite_drink: 'water'
-    }
-  end
-end
-```
-
-This works for arrays, too. You can return an array of such objects, and use them 
-in your output types using the brackets notation, for example `[FavouriteStuffType]`.
+    ```ruby
+    class MyQueries < Surikat::BaseQueries
+      def favourite_stuff
+        {
+          favourite_food: 'air',
+          favourite_drink: 'water'
+        }
+      end
+    end
+    ```
+    
+    This works for arrays, too. You can return an array of such objects, and use them 
+    in your output types using the brackets notation, for example `[FavouriteStuffType]`.
 
 #### Errors
 

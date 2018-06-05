@@ -67,10 +67,36 @@ module Surikat
 
       if is_array
         raise "List of data of type #{type_name} in field '#{field_name}' may not contain nil values" if type_name.include?('!') && data.include?(nil)
-        result = data.to_a.map {|x| cast_scalar(x, type_singular_nobang)}
+        result = data.to_a.map do |x|
+          if Types::BASIC.include? type_singular_nobang
+            cast_scalar(x, type_singular_nobang)
+          else
+            r              = {}
+            type           = Surikat.types[type_singular_nobang]
+            allowed_fields = x.keys & type['fields'].keys
+            allowed_fields.each do |af|
+              type_name = type['fields'][af]
+
+              r[af] = cast(x[af], type_name, type_name.first == '[', af)
+            end
+
+            r
+          end
+        end
       else
         raise "Data of type #{type_name} for field '#{field_name}' may not be nil" if type_name.last == '!' && data.nil?
-        result = cast_scalar(data, type_singular_nobang)
+
+        if Types::BASIC.include? type_singular_nobang
+          result = cast_scalar(data, type_singular_nobang)
+        else
+          result            = {}
+          type           = Surikat.types[type_singular_nobang]
+          allowed_fields = data.keys & type['fields'].keys
+          allowed_fields.each do |af|
+            type_name = type['fields'][af]
+            result[af] = cast(data[af], type_name, type_name.first == '[', af)
+          end
+        end
       end
       result
     end
@@ -161,6 +187,7 @@ module Surikat
         end
 
         deep_selectors.each do |s|
+          data                   = data.first if data.class.to_s.include?('ActiveRecord_Relation')
           uncast                 = data.is_a?(Hash) ? (data[s.name] || data[s.name.to_sym]) : hashify(data.send(s.name), s.selections, fields[s.name])
           hashified_data[s.name] = cast(uncast, fields[s.name], uncast.is_a?(Array), s.name)
         end

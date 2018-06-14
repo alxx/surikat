@@ -1,10 +1,7 @@
-require 'surikat/version'
+require('surikat/version')
 
 module Surikat
-  require 'active_support'
-  require 'graphql/libgraphqlparser'
-
-  require 'surikat/yaml_configurator'
+  %w(active_support graphql/libgraphqlparser surikat/yaml_configurator).each { |g| require g }
 
   class << self
     def config
@@ -15,18 +12,14 @@ module Surikat
     end
   end
 
-  require 'surikat/base_queries'
-  require 'surikat/base_model'
-  require 'surikat/base_type'
+  %w(base_queries base_model base_type).each { |g| require "surikat/#{g}" }
 
   # Require all models and queries
   %w(queries models).each do |dir|
-    Dir.glob("#{FileUtils.pwd}/app/#{dir}/*.rb").each {|f| require(f)}
+    Dir.glob("#{FileUtils.pwd}/app/#{dir}/*.rb").each { |f| require(f) }
   end
-  require 'surikat/types'
 
-  require 'surikat/routes'
-  require 'surikat/session'
+  %w(types routes session).each { |g| require "surikat/#{g}" }
 
   class << self
     def types
@@ -110,6 +103,13 @@ module Surikat
            \tclass of data: #{data.class}
            \ttype_name: #{type_name.inspect}" if self.options[:debug]
 
+      type_name_is_array = [type_name[0], type_name[-1]].join == '[]'
+
+      # When no AR record was found, return a nil value rather than an empty instance
+      if data.class.to_s.include?('ActiveRecord_Relation') && data.empty?
+        return type_name_is_array ? [] : nil
+      end
+
       type_name_single = type_name.gsub(/[\[\]\!]/, '')
 
       if Types::BASIC.include? type_name_single
@@ -135,7 +135,7 @@ module Surikat
         method_selectors = shallow_selectors
       end
 
-      type_name_is_array = [type_name[0], type_name[-1]].join == '[]'
+
 
       puts "
            \ttype_name_single: #{type_name_single}

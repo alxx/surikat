@@ -1,5 +1,6 @@
-require 'active_record'
-require 'ransack'
+%w(active_record ransack).each do |g|
+  require g
+end
 
 module Surikat
 

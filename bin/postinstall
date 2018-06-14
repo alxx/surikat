@@ -1,0 +1,25 @@
+#!ruby
+
+def add_version_to_readme
+  require './lib/surikat/version'
+  require 'fileutils'
+
+  text     = File.read 'README.md'
+  new_text = text.gsub(/(reflects version )\d+\.\d+\.\d+/, '\1' + Surikat::VERSION)
+
+  if new_text.length > 1000
+
+    File.open('README.md.new', 'w') do |f|
+      f.write new_text
+    end
+
+    FileUtils.mv 'README.md.new', 'README.md'
+
+  else
+    puts "Suspect: readme has too few characters."
+  end
+
+end
+
+puts "Running post-install scripts..."
+add_version_to_readme

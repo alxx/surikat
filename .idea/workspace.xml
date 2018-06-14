@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66400b9f-bfb7-48ab-a1ab-331b1d21e8c6" name="Default" comment="">
+    <list default="true" id="66400b9f-bfb7-48ab-a1ab-331b1d21e8c6" name="Default" comment="built gem 0.2.4">
+      <change afterPath="$PROJECT_DIR$/bin/postinstall" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/surikat.gemspec" beforeDir="false" afterPath="$PROJECT_DIR$/surikat.gemspec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/surikat.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/surikat.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/surikat/base_model.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/surikat/base_model.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/surikat/version.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/surikat/version.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/surikat-0.2.1.gem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/surikat-0.2.2.gem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/surikat-0.2.3.gem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/surikat-0.2.4.gem" beforeDir="false" afterPath="$PROJECT_DIR$/surikat-0.2.4.gem" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,55 +26,7 @@
         <entry file="file://$PROJECT_DIR$/TODO">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="476">
-              <caret line="28" column="74" selection-start-line="28" selection-start-column="74" selection-end-line="28" selection-end-column="74" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="17">
-                <caret line="189" column="4" selection-start-line="189" selection-start-column="4" selection-end-line="189" selection-end-column="4" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="session_manager.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/surikat/session_manager.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="surikat.gemspec" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/surikat.gemspec">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="39" column="2" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="version.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/surikat/version.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+              <caret line="28" column="2" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -74,20 +34,19 @@
       <file leaf-file-name="surikat.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/surikat.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
-              <folding>
-                <element signature="e#2343#9042#0" />
-                <element signature="e#9048#9302#0" />
-                <element signature="e#9308#10900#0" />
-              </folding>
+            <state relative-caret-position="755">
+              <caret line="149" column="54" selection-start-line="149" selection-start-column="54" selection-end-line="149" selection-end-column="54" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base_model.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/surikat/base_model.rb">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file leaf-file-name="version.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/surikat/version.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -189,14 +148,15 @@
         <option value="$PROJECT_DIR$/bin/console" />
         <option value="$PROJECT_DIR$/lib/surikat/templates/console.tmpl" />
         <option value="$PROJECT_DIR$/exe/surikat" />
-        <option value="$PROJECT_DIR$/lib/surikat/base_model.rb" />
         <option value="$PROJECT_DIR$/lib/surikat/templates/base_spec.rb.tmpl" />
         <option value="$PROJECT_DIR$/lib/surikat/session_manager.rb" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/TODO" />
-        <option value="$PROJECT_DIR$/lib/surikat.rb" />
-        <option value="$PROJECT_DIR$/lib/surikat/version.rb" />
         <option value="$PROJECT_DIR$/surikat.gemspec" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/bin/postinstall" />
+        <option value="$PROJECT_DIR$/lib/surikat/base_model.rb" />
+        <option value="$PROJECT_DIR$/lib/surikat.rb" />
+        <option value="$PROJECT_DIR$/TODO" />
+        <option value="$PROJECT_DIR$/lib/surikat/version.rb" />
       </list>
     </option>
   </component>
@@ -210,7 +170,7 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="3" />
+    <option name="x" value="1" />
     <option name="y" value="23" />
     <option name="width" value="1889" />
     <option name="height" value="1057" />
@@ -222,6 +182,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -237,11 +198,6 @@
             <path>
               <item name="surikat" type="b2602c69:ProjectViewProjectNode" />
               <item name="surikat" type="462c0819:PsiDirectoryNode" />
-              <item name="exe" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="surikat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="surikat" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -249,24 +205,11 @@
               <item name="surikat" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="surikat" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="surikat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="surikat" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="surikat" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="surikat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="surikat" type="462c0819:PsiDirectoryNode" />
-              <item name="spec" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -312,7 +255,8 @@
       <workItem from="1527061061177" duration="45000" />
       <workItem from="1527080050867" duration="68864000" />
       <workItem from="1527681663233" duration="14504000" />
-      <workItem from="1528216280645" duration="2039000" />
+      <workItem from="1528216280645" duration="2063000" />
+      <workItem from="1528996630109" duration="3555000" />
     </task>
     <task id="LOCAL-00001" summary="no gem">
       <created>1527697580402</created>
@@ -412,11 +356,18 @@
       <option name="project" value="LOCAL" />
       <updated>1528217824781</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="built gem 0.2.4">
+      <created>1528218437319</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1528218437319</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129499000" />
+    <option name="totallyTimeSpent" value="133078000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -428,7 +379,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="3" y="23" width="1889" height="1057" extended-state="0" />
+    <frame x="1" y="23" width="1889" height="1057" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32977587" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
@@ -437,10 +389,10 @@
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="right" id="Mongo Explorer" order="3" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49199572" visible="true" weight="0.2512182" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4909285" visible="true" weight="0.2512182" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32977587" />
-      <window_info id="Structure" order="1" sideWeight="0.50800425" side_tool="true" visible="true" weight="0.2512182" />
+      <window_info id="Structure" order="1" sideWeight="0.5090715" side_tool="true" visible="true" weight="0.2512182" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -469,7 +421,8 @@
     <MESSAGE value="doc fix" />
     <MESSAGE value="fixed casting of custom types" />
     <MESSAGE value="increased version to 0.2.4" />
-    <option name="LAST_COMMIT_MESSAGE" value="increased version to 0.2.4" />
+    <MESSAGE value="built gem 0.2.4" />
+    <option name="LAST_COMMIT_MESSAGE" value="built gem 0.2.4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -477,20 +430,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/surikat.gemspec">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="49" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/surikat/types.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="52" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/surikat/main.rb" />
     <entry file="file://$PROJECT_DIR$/TODO">
       <provider selected="true" editor-type-id="text-editor">
@@ -553,13 +492,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/surikat/templates/aaa_spec.rb.tmpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2550">
-          <caret line="150" column="3" selection-start-line="150" selection-start-column="3" selection-end-line="150" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/surikat/templates/Gemfile.tmpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -595,13 +527,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/surikat/templates/application.yml.tmpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/maculatura/lib2/app/queries/hello_queries.rb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -609,13 +534,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/surikat/templates/base_model.rb.tmpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -667,13 +585,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/surikat/scaffold.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="149" column="84" lean-forward="true" selection-start-line="149" selection-start-column="25" selection-end-line="149" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/surikat/templates/database.yml.tmpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -685,13 +596,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
           <caret line="19" column="51" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
@@ -1208,9 +1112,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/surikat/base_model.rb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/surikat/session_manager.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -1218,32 +1119,90 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/surikat.gemspec">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="39" column="2" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/templates/aaa_spec.rb.tmpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2550">
+          <caret line="150" column="3" selection-start-line="150" selection-start-column="3" selection-end-line="150" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/templates/application.yml.tmpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/templates/base_model.rb.tmpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/rubystubs24/kernel.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="2969" column="8" selection-start-line="2969" selection-start-column="8" selection-end-line="2969" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/base_model.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/postinstall">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat/scaffold.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="590">
+          <caret line="490" column="6" selection-start-line="490" selection-start-column="6" selection-end-line="490" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="17">
-            <caret line="189" column="4" selection-start-line="189" selection-start-column="4" selection-end-line="189" selection-end-column="4" />
+          <first_editor relative-caret-position="583">
+            <caret line="401" selection-start-line="401" selection-end-line="401" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/surikat.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="755">
+          <caret line="149" column="54" selection-start-line="149" selection-start-column="54" selection-end-line="149" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TODO">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
-          <caret line="28" column="74" selection-start-line="28" selection-start-column="74" selection-end-line="28" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/surikat.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
-          <folding>
-            <element signature="e#2343#9042#0" />
-            <element signature="e#9048#9302#0" />
-            <element signature="e#9308#10900#0" />
-          </folding>
+          <caret line="28" column="2" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -1251,13 +1210,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/surikat.gemspec">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="39" column="2" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
         </state>
       </provider>
     </entry>

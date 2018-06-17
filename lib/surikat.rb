@@ -1,7 +1,7 @@
 require('surikat/version')
 
 module Surikat
-  %w(active_support graphql/libgraphqlparser surikat/yaml_configurator).each { |g| require g }
+  %w(active_support graphql/libgraphqlparser surikat/yaml_configurator).each {|g| require g}
 
   class << self
     def config
@@ -12,14 +12,14 @@ module Surikat
     end
   end
 
-  %w(base_queries base_model base_type).each { |g| require "surikat/#{g}" }
+  %w(base_queries base_model base_type).each {|g| require "surikat/#{g}"}
 
   # Require all models and queries
   %w(queries models).each do |dir|
-    Dir.glob("#{FileUtils.pwd}/app/#{dir}/*.rb").each { |f| require(f) }
+    Dir.glob("#{FileUtils.pwd}/app/#{dir}/*.rb").each {|f| require(f)}
   end
 
-  %w(types routes session).each { |g| require "surikat/#{g}" }
+  %w(types routes session).each {|g| require "surikat/#{g}"}
 
   class << self
     def types
@@ -82,11 +82,11 @@ module Surikat
         if Types::BASIC.include? type_singular_nobang
           result = cast_scalar(data, type_singular_nobang)
         else
-          result            = {}
+          result         = {}
           type           = Surikat.types[type_singular_nobang]
           allowed_fields = data.keys & type['fields'].keys
           allowed_fields.each do |af|
-            type_name = type['fields'][af]
+            type_name  = type['fields'][af]
             result[af] = cast(data[af], type_name, type_name.first == '[', af)
           end
         end
@@ -134,8 +134,6 @@ module Surikat
         table_selectors  = []
         method_selectors = shallow_selectors
       end
-
-
 
       puts "
            \ttype_name_single: #{type_name_single}
@@ -264,7 +262,13 @@ module Surikat
       expected ||= {}
       given    ||= {}
 
-      return false unless given.keys.sort == expected.keys.sort
+      required = expected.keys.select { |k| expected[k].include?('!') }
+
+      # Make sure all required arguments are present
+      return false unless (required & given.keys) == required
+
+      # Make sure no unknown arguments exist
+      return false unless (given.keys - expected.keys).empty?
 
       given.each do |k, v|
         given[k] = cast_scalar(v, expected[k])
@@ -324,64 +328,75 @@ module Surikat
       given.selections.map(&:name) - expected_type['fields'].keys
     end
 
-    # Turn a parsed query into a JSON response by means of a routing table
+    # Turn a parsed query into a response by means of a routing table
+    # Returns the response, suitable for serialization, and an errors array.
     def query(selection)
-      name = selection.name
-
+      name  = selection.name
       route = routes['queries'][name]
 
-      return({error: "Don't know what to do with query #{name}"}) if route.nil?
-
-      return({error: 'Access denied'}) unless allowed?(route)
+      return([nil, [{unknownQueryName: true}]]) if route.nil?
+      return([nil, [{accessDenied: true}]]) unless allowed?(route)
 
       arguments = {}
       selection.arguments.each do |argument|
         arguments[argument.name] = argument.value
       end
 
-      cast_arguments = validate_arguments(arguments, route['arguments'])
-      return({error: "Expected arguments: {#{route['arguments'].to_a.map {|k, v| "#{k} (#{v})"}.join(', ')}}. Received instead {#{arguments.to_a.map {|k, v| "#{k}: #{v}"}.join(', ')}}."}) unless cast_arguments
+      unless cast_arguments = validate_arguments(arguments, route['arguments'])
+        error = "Expected arguments: {#{route['arguments'].to_a.map {|k, v| "#{k} (#{v})"}.join(', ')}}. Received instead {#{arguments.to_a.map {|k, v| "#{k}: #{v}"}.join(', ')}}."
+        return([nil, [{argumentError: error}]])
+      end
 
       invalid_s = invalid_selectors(selection, route['output_type'])
-      return({error: "Invalid selectors: #{invalid_s.join(', ')}"}) unless invalid_s.empty?
+      return([nil, [{selectorError: "Invalid selectors: #{invalid_s.join(', ')}"}]]) unless invalid_s.empty?
 
       queries = Object.const_get(route['class']).new(cast_arguments, self.session)
       data    = queries.send(route['method'])
 
-      return({error: "No result"}) if data.nil? || data.class.to_s == 'ActiveRecord::Relation' && data.empty?
+      return([nil, [{noResult: true}]]) if data.nil? || data.class.to_s == 'ActiveRecord::Relation' && data.empty?
 
       begin
-        hashify(data, selection.selections, route['output_type'])
+        hashified_data = hashify(data, selection.selections, route['output_type'])
+        if hashified_data.is_a?(Hash) && hashified_data[:errors]
+          [nil, hashified_data[:errors]]
+        else
+          [hashified_data, []]
+        end
       rescue Exception => e
         puts "EXCEPTION: #{e.message}\n#{e.backtrace.join("\n")}"
-        return({error: e.message})
+        return([nil, [{error: e.message}]])
       end
 
     end
 
-    # Turn a parsed mutation into a JSON response
+    # Turn a parsed mutation into a response suitable for serialization.
+    # Returns the Hash object and an errors array.
     def mutation(selection, variable_definitions, variables)
-      name = selection.name
-
+      name  = selection.name
       route = routes['mutations'][name]
 
-      return({error: "Don't know what to do with mutation #{name}"}) if route.nil?
-      return({error: 'Access denied'}) unless allowed?(route)
+      return([nil, [{unknownQueryName: true}]]) if route.nil?
+      return([nil, [{accessDenied: true}]]) unless allowed?(route)
 
       begin
         check_variables(variables, variable_definitions)
       rescue Exception => e
-        return({error: e.message})
+        return([nil, [variableError: e.message]])
       end
 
       queries = Object.const_get(route['class']).new(variables, self.session)
       data    = queries.send(route['method'])
 
       begin
-        hashify(data, selection.selections, route['output_type'])
+        hashified_data = hashify(data, selection.selections, route['output_type'])
+        if hashified_data.is_a?(Hash) && hashified_data[:errors]
+          [nil, hashified_data[:errors]]
+        else
+          [hashified_data, []]
+        end
       rescue Exception => e
         puts "EXCEPTION: #{e.message}\n#{e.backtrace.join("\n")}"
-        return({error: e.message})
+        return([nil, [error: e.message]])
       end
 
     end
@@ -423,14 +438,18 @@ module Surikat
 
       self.session = options[:session_key].blank? ? {} : Surikat::Session.new(options[:session_key])
 
-      result = {}
+      data   = {}
+      errors = []
 
       parsed_query.definitions.each do |definition|
         case definition.operation_type
 
         when 'query'
           definition.selections.each do |selection|
-            result[selection.name] = query(selection)
+            q_result, q_errors = query(selection)
+            errors             += q_errors
+
+            data[selection.name] = q_result
           end
 
         when 'mutation'
@@ -438,10 +457,16 @@ module Surikat
           definition.variables.each {|v| variable_definitions[v.name] = v.type.name}
 
           definition.selections.each do |selection|
-            result[selection.name] = mutation(selection, variable_definitions, variables)
+            q_result, q_errors = mutation(selection, variable_definitions, variables)
+            errors             += q_errors
+
+            data[selection.name] = q_result
           end
         end
       end
+
+      result = {data: data}
+      result.merge!({errors: errors}) unless errors.empty?
 
       result
     end

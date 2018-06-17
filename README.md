@@ -225,7 +225,7 @@ that has those two keys.
 
 #### Errors
 
-Application errors, type errors or model validation errors are return inside a field named `error`.
+As per [GraphQL specs](http://facebook.github.io/graphql/June2018/#sec-Errors), application errors, type errors or model validation errors are return inside a field named `errors` which is an array.
 
 #### Arguments
 
@@ -407,7 +407,7 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/alxx/s
 
 ## Version
 
-This code reflects version 0.2.5.
+This code reflects version 0.3.0.
 
 ## License
 

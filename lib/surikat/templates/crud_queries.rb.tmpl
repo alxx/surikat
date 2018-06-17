@@ -35,6 +35,8 @@ Query Example:
 %{examples_list}
 =end
   def all
+    return %{class_name}.all unless arguments['q']
+
     ransack = {}
     CGI::parse(arguments['q']).each { |k, v| ransack[k] = v.first}
 

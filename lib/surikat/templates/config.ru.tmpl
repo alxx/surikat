@@ -54,6 +54,8 @@ class %{app_name_capitalized} < Rack::App
       end
     end
 
+    response.headers['Access-Control-Allow-Origin'] = '*'
+
     Oj.dump result, mode: :compat
   end
 end

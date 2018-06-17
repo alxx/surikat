@@ -25,7 +25,7 @@ describe % {class_name}Queries do
             "%{class_name}" => dates2string(@%{model_name}.attributes.slice(*@expected_fields))
         }
 
-        expect(response).to eq expected
+        expect(response[:data]).to eq expected
       end
 
       [ %{columns_space} ].each do |col|
@@ -43,7 +43,7 @@ describe % {class_name}Queries do
               })
           }
 
-          expect(response).to eq expected
+          expect(response[:data]).to eq expected
         end
       end
 
@@ -59,7 +59,7 @@ describe % {class_name}Queries do
             "%{class_name_plural}" => ([ @%{model_name}] + @more_%{model_name_plural}).map {|r| dates2string(r.attributes.slice(*@expected_fields))}
         }
 
-        expect(response).to eq expected
+        expect(response[:data]).to eq expected
       end
 
     end
@@ -89,8 +89,8 @@ describe % {class_name}Queries do
 
         response = Surikat::run query, variables
 
-        expect(response).to be_instance_of Hash
-        expect(response['%{class_name}']).to include variables['%{model_name}'].slice(*@expected_fields)
+        expect(response[:data]).to be_instance_of Hash
+        expect(response[:data]['%{class_name}']).to include variables['%{model_name}'].slice(*@expected_fields)
       end
 
       it "should update an instance of %{class_name}" do
@@ -114,8 +114,8 @@ describe % {class_name}Queries do
 
         response = Surikat::run query, variables
 
-        expect(response).to be_instance_of Hash
-        expect(response['Update%{class_name}']).to eq true
+        expect(response[:data]).to be_instance_of Hash
+        expect(response[:data]['Update%{class_name}']).to eq true
 
         # Step 2: Test that the record has been updated
         %{model_name}.reload
@@ -136,8 +136,8 @@ describe % {class_name}Queries do
 
         response = Surikat::run query, variables
 
-        expect(response).to be_instance_of Hash
-        expect(response['Delete%{class_name}']).to eq true
+        expect(response[:data]).to be_instance_of Hash
+        expect(response[:data]['Delete%{class_name}']).to eq true
 
         # Step 2: Test that the object actually doesn't exist
         expect {%{model_name}.reload}.to raise_error ActiveRecord::RecordNotFound

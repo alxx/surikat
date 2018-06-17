@@ -5,7 +5,7 @@ describe HelloQueries do
     describe "Surikat" do
       it "should respond nicely" do
         response = Surikat.run '{Hello}', {}
-        expect(response['Hello']).to eq 'world'
+        expect(response[:data]['Hello']).to eq 'world'
       end
     end
   end
@@ -15,24 +15,24 @@ describe HelloQueries do
       it "should persist data in session between requests" do
         query = "{AddSession}"
         response = Surikat::run(query, {}, {session_key: 'abc'})
-        expect(response['AddSession']).to include ','
+        expect(response[:data]['AddSession']).to include ','
 
-        key, val = response['AddSession'].split(',')
+        key, val = response[:data]['AddSession'].split(',')
         query = '{ShowSession}'
         response = Surikat::run(query, {}, {session_key: 'abc'})
-        expect(response['ShowSession']).to include val
-        expect(response['ShowSession']).to include key
+        expect(response[:data]['ShowSession']).to include val
+        expect(response[:data]['ShowSession']).to include key
       end
 
       it "should not persist data across different sessions" do
         query = "{AddSession}"
         response = Surikat::run(query, {}, {session_key: 'abc'})
-        expect(response['AddSession']).to include ','
+        expect(response[:data]['AddSession']).to include ','
 
-        _, val = response['AddSession'].split(',')
+        _, val = response[:data]['AddSession'].split(',')
         query = '{ShowSession}'
         response = Surikat::run(query, {}, {session_key: 'def'})
-        expect(response['ShowSession']).to_not include val
+        expect(response[:data]['ShowSession']).to_not include val
       end
     end
   end

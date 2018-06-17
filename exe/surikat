@@ -143,7 +143,8 @@ def exemplify_mutations(query_name, route)
   r_args.each.each do |var_name, var_type|
     k_var_name = ActiveSupport::Inflector.singularize(var_name.underscore)
     variables[k_var_name] = {}
-    all_types[var_type]['arguments'].each do |a, t|
+    arguments = all_types[var_type] && all_types[var_type]['arguments'] || []
+    arguments.each do |a, t|
       next if a == 'id' && route['method'] == 'create' # yes, someone may make create queries with other names
       if Types::BASIC.include?(t)
         variables[k_var_name][a] = random_values(t)

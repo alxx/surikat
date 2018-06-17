@@ -106,7 +106,9 @@ module Surikat
       type_name_is_array = [type_name[0], type_name[-1]].join == '[]'
 
       # When no AR record was found, return a nil value rather than an empty instance
-      if data.class.to_s.include?('ActiveRecord_Relation') && data.empty?
+      # Sadly this causes a SELECT and I cannot find any way around it. Presumably it's a very cheap SELECT,
+      # but it's still needless. :(
+      if data.class.to_s.include?('ActiveRecord_Relation') && !data.exists?
         return type_name_is_array ? [] : nil
       end
 
@@ -150,7 +152,6 @@ module Surikat
 
 
       return cast(data, type_name, type_name_is_array, type_name) if type_is_basic
-
       data = data.first if !type_name_is_array && data.class.to_s == 'ActiveRecord::Relation'
 
       return({errors: data&.errors&.to_a}) if data.respond_to?(:errors) && data.errors.to_a.any?
@@ -159,7 +160,7 @@ module Surikat
         hashified_data = {}
 
         unless table_selectors.empty?
-          if data.respond_to?(:pluck) && method_selectors.empty?
+          if data.respond_to?(:pluck) && method_selectors.empty? && deep_selectors.empty?
             unique_table_selector_names = table_selectors.map(&:name).uniq
             plucked_data                = data.pluck(*unique_table_selector_names).flatten
             unique_table_selector_names.each_with_index do |s_name, idx|
@@ -170,7 +171,7 @@ module Surikat
           end
         end
 
-        data = data.first if data.class.to_s.include?('ActiveRecord') && method_selectors.any?
+        data = data.first if data.class.to_s.include?('ActiveRecord') && (method_selectors.any? || deep_selectors.any?)
 
         method_selectors.each do |s|
           if data.is_a? Hash
@@ -185,13 +186,16 @@ module Surikat
         end
 
         deep_selectors.each do |s|
-          data                   = data.first if data.class.to_s.include?('ActiveRecord_Relation')
-          uncast                 = data.is_a?(Hash) ? (data[s.name] || data[s.name.to_sym]) : hashify(data.send(s.name), s.selections, fields[s.name])
+          uncast                 = if data.is_a? Hash
+                                     data[s.name] || data[s.name.to_sym]
+                                   else
+                                     deeper = data.send(s.name)
+                                     hashify(deeper, s.selections, fields[s.name])
+                                   end
           hashified_data[s.name] = cast(uncast, fields[s.name], uncast.is_a?(Array), s.name)
         end
       else # data is a set of records
         hashified_data = []
-
         # if there are no method selectors, use +pluck+ to optimise.
         if method_selectors.empty? && deep_selectors.empty? && !table_selectors.empty?
           data.pluck(*(table_selectors.map(&:name).uniq)).each do |record|
@@ -205,16 +209,17 @@ module Surikat
                 hash[s.name] = cast(record[idx], fields[s.name], false, s.name)
               end
             end
+
+
             deep_selectors.each do |s|
               accepted_arguments = record.class.instance_method(s.name)&.parameters&.select {|p| [p.first == :req]}&.map(&:last)
               allowed_arguments  = accepted_arguments.map {|aa| s.arguments.detect {|qa| qa.name.to_s == aa.to_s}&.value}
 
-              uncast = hashify(
+              uncast       = hashify(
                   record.send(s.name, *allowed_arguments),
                   s.selections,
                   fields[s.name]
               )
-
               hash[s.name] = cast(uncast, fields[s.name], uncast.is_a?(Array), s.name)
             end
             hashified_data << hash
@@ -262,7 +267,7 @@ module Surikat
       expected ||= {}
       given    ||= {}
 
-      required = expected.keys.select { |k| expected[k].include?('!') }
+      required = expected.keys.select {|k| expected[k].include?('!')}
 
       # Make sure all required arguments are present
       return false unless (required & given.keys) == required
@@ -353,7 +358,7 @@ module Surikat
       queries = Object.const_get(route['class']).new(cast_arguments, self.session)
       data    = queries.send(route['method'])
 
-      return([nil, [{noResult: true}]]) if data.nil? || data.class.to_s == 'ActiveRecord::Relation' && data.empty?
+      return([nil, [{noResult: true}]]) if data.nil? || data.class.to_s == 'ActiveRecord::Relation' && !data.exists?
 
       begin
         hashified_data = hashify(data, selection.selections, route['output_type'])

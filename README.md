@@ -382,6 +382,10 @@ passenger serve
 to start a server on port 3000. Then you can use GraphiQL, curl or your actual frontend app to start 
 querying the backend.
 
+## Demo
+
+There's a small front-end "app" which may be used as a demo, in the `frontend-demo` directory, and it has its own README.
+
 ## System Dependencies
 
 For improved performance, Surikat uses a C++ library to parse GraplQL queries, [libgraphqlparser](https://github.com/graphql/libgraphqlparser).
@@ -407,7 +411,7 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/alxx/s
 
 ## Version
 
-This code reflects version 0.3.0.
+This code reflects version 0.3.1.
 
 ## License
 

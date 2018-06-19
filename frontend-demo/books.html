@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Surikat Demo</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <style>
+        body {
+            padding-top: 54px;
+        }
+
+        @media (min-width: 992px) {
+            body {
+                padding-top: 56px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="https://github.com/alxx/surikat">
+            <img src="https://camo.githubusercontent.com/b17e471f697a115ac68f565e637602328c402478/68747470733a2f2f692e696d6775722e636f6d2f4f6c43557733382e706e67"
+                 width="26" height="40" alt="">
+            Surikat Demo
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Authors</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="books.html">Books</a>
+                    <span class="sr-only">(current)</span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="aaa.html">AAA</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h1 class="mt-5">Books</h1>
+
+            <form>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="author_id">Author</label>
+                    </div>
+                    <select class="custom-select" id="author_id">
+                    </select>
+                </div>
+
+                <input type="hidden" id="book_id" value="">
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text">Book title</label>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Enter a title" id="title">
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="btnSubmit" disabled="disabled">Submit</button>
+                <button type="button" class="btn btn-danger" id="btnDelete" disabled="disabled">Delete</button>
+            </form>
+
+
+            <table style="margin-top: 50px;" class="table table-hover" id="all">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Created at</th>
+                    <th scope="col">Updated at</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- GraphQL Plugin -->
+<script src="vendor/graphql.min.js"></script>
+
+<!-- Notifications -->
+<script src="vendor/notify.min.js"></script>
+
+<!-- App -->
+<script src="books.js"></script>
+
+<script language="JavaScript">
+    $(document).ready(function () {
+
+        $('input[type="text"]').keyup(function () {
+            if ($(this).val() != '') {
+                $(':input[type="submit"]').prop('disabled', false);
+            } else {
+                $(':input[type="submit"]').prop('disabled', true);
+            }
+        });
+
+        run();
+    })
+</script>
+
+</body>
+
+</html>

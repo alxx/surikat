@@ -27,6 +27,8 @@ Query Example:
     return nil unless user
 
     session[:user_id] = user.id
+    session[:logged_in_at] = Time.now
+
     true
   end
 
@@ -107,17 +109,17 @@ Query Example:
 Just some demo queries used by the rspec tests. If you delete them, make sure to also delete the relevant tests in +spec/aaa_spec.rb+.
 =end
   def demo_one
-    u = User.where(id: session['user_id']).first
+    u = User.where(id: session[:user_id]).first
     "if you see this, you are logged in as #{u&.email} since #{session[:logged_in_at]}."
   end
 
   def demo_two
-    u = User.where(id: session['user_id']).first
+    u = User.where(id: session[:user_id]).first
     "if you see this, you are logged in as #{u&.email} since #{session[:logged_in_at]} (and you have an acceptable user role)."
   end
 
   def demo_three
-    u = User.where(id: session['user_id']).first
+    u = User.where(id: session[:user_id]).first
     "if you see this, you are logged in as #{u&.email} since #{session[:logged_in_at]} (and you have an acceptable user role)."
   end
 

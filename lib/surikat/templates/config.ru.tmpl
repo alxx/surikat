@@ -16,6 +16,11 @@ class %{app_name_capitalized} < Rack::App
     app
   end
 
+  options '/' do
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    response.headers['Access-Control-Allow-Headers'] = 'Surikat'
+  end
+
   def app
     ActiveRecord::Base.logger = Logger.new(STDOUT) unless ENV['RACK_ENV'] == 'production'
 

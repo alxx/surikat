@@ -21,7 +21,7 @@ they have significant learning curves.
 
 Sure, Rails can make API-only apps -- but only REST API apps. [GraphQL](http://graphql.org), a standard created
 by Facebook and made open-source since then, is far more efficient than REST. There's only
-one endpoint, and you get exactly the data what you ask for -- nothing else.
+one endpoint, and you get exactly the data that you ask for -- nothing else.
 
 Sure, Rails can also be taught GraphQL. But that's an add-on to everything else that Rails 
 does; by contrast, Surikat was built, from the ground up, around GraphQL.
@@ -169,7 +169,7 @@ Example query:
 
 ### Custom Data
 
-Sometimes you need to supply for the frontend things that don't come directly from the database.
+Sometimes you need to supply things to the frontend that don't come directly from the database.
 In fact, you can send anything you want; here are a few simple recipes:
 
  1. To add an additional field to the ones already provided by the database, the easiest way 
@@ -225,7 +225,7 @@ that has those two keys.
 
 #### Errors
 
-As per [GraphQL specs](http://facebook.github.io/graphql/June2018/#sec-Errors), application errors, type errors or model validation errors are return inside a field named `errors` which is an array.
+As per [GraphQL specs](http://facebook.github.io/graphql/June2018/#sec-Errors), application errors, type errors or model validation errors are returned inside a field named `errors` which is an array.
 
 #### Arguments
 
@@ -271,8 +271,8 @@ end
 
 The session store is configured in `config/application.yml` and it can either be a file, or Redis.
 
-The file method is slower, and can it gets slower as the file (which lives in `tmp/`) gets bigger. Also,
-needless to say, it doesn't work to scale up the app across several machines.
+The file method is slower, and it gets slower as the file (which lives in `tmp/`) gets bigger. Needless
+to say, it also doesn't work to scale up the app across several machines.
 
 Redis is much preferred especially in production; remember to add the `redis` gem to Gemfile. To configure it,
 use the `url` field in the same configuration file; that will be passed to the Redis initialisation method.
@@ -324,7 +324,7 @@ During this time, the session will also contain `:superadmin_id`.
 
 Roles are simply identifiers stored, for a user, inside the `roleids` attribute, and comma-separated.
 
-Before a query is executed, the contents of its `permitted_roles` field (from its route) is evaluated.
+Before a query is executed, the content of its `permitted_roles` field (from its route) is evaluated.
 If it's `any` then a user of any role is allowed access. If it's a comma separated array of role identifiers,
 then access will only be granted if there's an intersection between those roles and the current user's.
 

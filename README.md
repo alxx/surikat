@@ -417,7 +417,7 @@ Surikat uses [Phusion Passenger](https://www.phusionpassenger.com/) as a web
 server. Simply type
 
 ```bash
-passenger serve
+passenger start
 ```
 
 to start a server on port 3000. Then you can use GraphiQL, curl or your actual

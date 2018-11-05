@@ -423,10 +423,73 @@ passenger start
 to start a server on port 3000. Then you can use GraphiQL, curl or your actual
 frontend app to start querying the backend.
 
+To start in production mode:
+
+```bash
+passenger start -e production
+```
+
 ## Demo
 
 There's a small front-end "app" which may be used as a demo, in the
 `frontend-demo` directory, and it has its own README.
+
+## Benchmarking
+
+To benchmark a Surikat app, you can use Apache Benchmark. For that, first save 
+a query inside a file, for example:
+
+ ```bash
+ $ cat surikat.query                                                                                                          ‹ruby-2.4.1›
+ query={Authors(q: "id_lt=10") {first_name}}
+ ```
+ 
+ Then, start Passenger (see above) and invoke Apache Benchmark for example like this:
+ 
+ ```bash
+ ab -k -c 10 -n 100 -T 'application/x-www-form-urlencoded' -p surikat.query  http://0:3000/
+ ```
+
+This runs 10 concurrent requests, to a maximum of 100 requests.
+
+## Benchmarking Results
+
+Benchmarking tests were performed in the following conditions:
+
+Machine: iMac 3.1 GHz Intel Core i7, 16 GB RAM (running macOS Mojave, 10.14)
+Database Server: MySQL 5.7.10
+Database: 20,000 authors who together have 141,224 books
+Ruby: 2.4.1-p111
+
+Surikat 0.3.1 versus Rails 5.2.1 with graphql 1.8.11 (latest at the time)
+
+Surikat app: two auto-generated scaffolds (one for authors, one for books).
+Rails app: two models (`Author` and `Book` and minimal queries.)
+
+Both apps use Ransack 2.1.0 in exactly the same way.
+
+Both apps connected to the same database.
+
+Only default values used everywhere else (no optimisations etc.)
+
+### Test 1.
+Query:
+```graphql
+{Authors(q: "id_lt=10") {first_name, books{title}}}
+```
+
+* Rails: 6.67 requests per second.
+* __Surikat: 9.70 requests per second.__
+
+### Test 2.
+Query:
+```graphql
+{Authors(q: "id_lt=10") {first_name}}
+```
+
+* Rails: 164.86 requests per second.
+* __Surikat: 1,332.52 requests per second.__
+
 
 ## System Dependencies
 

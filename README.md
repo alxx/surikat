@@ -524,7 +524,7 @@ https://github.com/alxx/surikat.
 
 ## Version
 
-This code reflects version 0.3.1.
+This code reflects version 0.3.2.
 
 ## License
 
